@@ -8,8 +8,6 @@ const distDir = path.join(rootDir, "cloudflare-dist");
 
 const publishFiles = [
   "_headers",
-  "admin.html",
-  "admin.js",
   "algorithm.html",
   "algorithm.js",
   "app.js",
@@ -17,7 +15,6 @@ const publishFiles = [
   "cloudflare-config.js",
   "data.js",
   "index.html",
-  "manage.html",
   "robots.txt",
   "styles.css"
 ];
@@ -35,7 +32,7 @@ function rebuildDistDirectory() {
   }
   writeFileSync(
     path.join(distDir, "cloudflare-config.js"),
-    'window.CLOUDFLARE_CONFIG = {\n  enabled: true,\n  apiBase: "",\n  publicMode: "static"\n};\n'
+    'window.CLOUDFLARE_CONFIG = {\n  enabled: true,\n  apiBase: "",\n  publicMode: "live"\n};\n'
   );
   writeFileSync(
     path.join(distDir, "_headers"),
@@ -44,14 +41,6 @@ function rebuildDistDirectory() {
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=()
   Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'
-
-/admin.html
-  Cache-Control: no-store
-  X-Robots-Tag: noindex, nofollow
-
-/manage.html
-  Cache-Control: no-store
-  X-Robots-Tag: noindex, nofollow
 `
   );
 }

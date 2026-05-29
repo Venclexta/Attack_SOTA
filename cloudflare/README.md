@@ -4,13 +4,13 @@ Recommended production stack:
 
 - Cloudflare Registrar or external domain using Cloudflare DNS.
 - Cloudflare Pages for the static website.
-- Cloudflare Pages Functions for the administrator API.
+- Cloudflare Pages Functions for the read-only public API.
 - Cloudflare D1 for the editable database.
-- `data.js` as a static fallback and fast public snapshot.
+- `data.js` as a static fallback if the database API is unavailable.
 
-This keeps high-volume public browsing on Cloudflare's CDN. D1 is mainly used by the admin UI and by the optional live public API.
+This keeps public browsing on static HTML/CSS/JS while exposing D1 only through the read-only public API.
 
-The Cloudflare build sets `publicMode: "static"` in `cloudflare-config.js`, so public pages read the bundled `data.js` snapshot. The admin pages still read and write D1 live. If you later prefer every public visitor to read the database, change `publicMode` to `"live"`, but that is less suitable for traffic spikes.
+The Cloudflare and Netlify builds set `publicMode: "live"` in `cloudflare-config.js`, so public pages read the current database through `/api/data`. The bundled `data.js` snapshot remains a safe fallback if the API is temporarily unavailable.
 
 ## Generate Database Files
 
@@ -47,13 +47,7 @@ This creates:
    DB
    ```
 
-6. Add an environment variable for session signing:
-
-   ```text
-   ADMIN_SESSION_SECRET
-   ```
-
-   Use a long random value. Do not reuse an account password.
+6. If a second frontend such as Netlify reads this API, add its origin to `ALLOWED_ORIGINS`.
 
 ## Import Data
 
@@ -64,21 +58,9 @@ npx wrangler d1 execute attack-sota --remote --file cloudflare/d1/schema.sql
 npx wrangler d1 execute attack-sota --remote --file cloudflare/d1/seed.sql
 ```
 
-## Create The First Admin
+## Update Data
 
-Generate SQL locally:
-
-```bash
-node scripts/create-cloudflare-admin-sql.mjs admin "REPLACE_WITH_STRONG_PASSWORD"
-```
-
-Copy the printed SQL and execute it in Cloudflare D1, either through the dashboard query console or Wrangler:
-
-```bash
-npx wrangler d1 execute attack-sota --remote --command "PASTE_SQL_HERE"
-```
-
-After that, sign in at `/admin.html`. Additional administrators can be created from the website admin page.
+The public website has no administrator login or write API. Update data directly in Cloudflare D1 with the dashboard console, Wrangler, or another trusted database tool. After substantial updates, export the data back to `db/attacks.json` and rebuild the static snapshot if you want the repository fallback to match production.
 
 ## Domain
 
@@ -86,4 +68,4 @@ If the domain is registered at Cloudflare, attach it directly in Pages under **C
 
 ## Public Performance
 
-The public pages are still static HTML/CSS/JS. `data.js` is shipped with the site, and `/api/data` has a short cache header. For the largest traffic spikes, rebuild and redeploy after data updates so the public pages can rely on the static snapshot instead of querying D1 for every visitor.
+The public pages are still static HTML/CSS/JS. `data.js` is shipped with the site as a fallback, and `/api/data` has a short cache header so recently loaded database responses can be reused.

@@ -3,7 +3,7 @@ compatibility_date = "2026-05-29"
 pages_build_output_dir = "cloudflare-dist"
 
 [vars]
-ADMIN_ALLOWED_ORIGINS = "https://symmetric-cryptanalysis-index.netlify.app https://zhangjn.com https://www.zhangjn.com"
+ALLOWED_ORIGINS = "https://symmetric-cryptanalysis-index.netlify.app https://zhangjn.com https://www.zhangjn.com"
 
 [[d1_databases]]
 binding = "DB"

@@ -10,8 +10,6 @@ const zipPath = path.join(rootDir, "netlify-dist.zip");
 
 const publishFiles = [
   "_headers",
-  "admin.html",
-  "admin.js",
   "algorithm.html",
   "algorithm.js",
   "app.js",
@@ -19,7 +17,6 @@ const publishFiles = [
   "cloudflare-config.js",
   "data.js",
   "index.html",
-  "manage.html",
   "robots.txt",
   "styles.css",
 ];

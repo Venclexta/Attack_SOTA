@@ -155,7 +155,7 @@ function renderAlgorithmPage() {
   const bestByStrength = [...records].sort(compareAttackStrength)[0];
   const tags = [...new Set(records.flatMap((item) => item.tags))].sort(collator.compare);
 
-  document.title = `${algorithm} · Symmetric Attack SOTA`;
+  document.title = `${algorithm} | SYMMETRIC CRYPTANALYSIS INDEX`;
   document.querySelector("#algorithm-title").textContent = algorithm;
   const origin = document.querySelector("#algorithm-origin");
   if (origin) {
