@@ -22,7 +22,6 @@ const publishFiles = [
   "manage.html",
   "robots.txt",
   "styles.css",
-  "supabase-config.js",
 ];
 
 function ensureSourceFilesExist() {
@@ -51,6 +50,14 @@ function rebuildDistDirectory() {
   writeFileSync(
     path.join(distDir, "cloudflare-config.js"),
     `window.CLOUDFLARE_CONFIG = {\n  enabled: ${cloudflareEnabled},\n  apiBase: ${JSON.stringify(apiBase)},\n  publicMode: ${JSON.stringify(publicMode)}\n};\n`,
+  );
+
+  const supabaseUrl = String(process.env.SUPABASE_URL || "");
+  const supabaseAnonKey = String(process.env.SUPABASE_ANON_KEY || "");
+  const supabaseEnabled = Boolean(supabaseUrl && supabaseAnonKey);
+  writeFileSync(
+    path.join(distDir, "supabase-config.js"),
+    `window.SUPABASE_CONFIG = {\n  enabled: ${supabaseEnabled},\n  url: ${JSON.stringify(supabaseUrl)},\n  anonKey: ${JSON.stringify(supabaseAnonKey)},\n  adminDomain: ${JSON.stringify(process.env.SUPABASE_ADMIN_DOMAIN || "attack-sota.local")}\n};\n`,
   );
 }
 
