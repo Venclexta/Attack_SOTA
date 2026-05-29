@@ -62,23 +62,25 @@ function rebuildDistDirectory() {
 }
 
 function rebuildZipArchive() {
+  if (process.env.NETLIFY === "true") return false;
   rmSync(zipPath, { force: true });
   execFileSync("ditto", ["-c", "-k", "--sequesterRsrc", "--keepParent", distDir, zipPath], {
     cwd: rootDir,
     stdio: "ignore",
   });
+  return true;
 }
 
-function logSummary() {
+function logSummary(zipCreated) {
   const files = readdirSync(distDir).sort();
   console.log(`Rebuilt ${path.relative(rootDir, distDir)} with ${files.length} files:`);
   for (const file of files) {
     console.log(`- ${file}`);
   }
-  console.log(`Created ${path.relative(rootDir, zipPath)}`);
+  if (zipCreated) console.log(`Created ${path.relative(rootDir, zipPath)}`);
 }
 
 ensureSourceFilesExist();
 rebuildDistDirectory();
-rebuildZipArchive();
-logSummary();
+const zipCreated = rebuildZipArchive();
+logSummary(zipCreated);
