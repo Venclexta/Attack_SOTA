@@ -53,7 +53,7 @@ create table if not exists admin_users (
   is_active integer not null default 1,
   password_salt text not null,
   password_hash text not null,
-  password_iterations integer not null default 210000,
+  password_iterations integer not null default 100000,
   created_at text not null default current_timestamp,
   updated_at text not null default current_timestamp
 );

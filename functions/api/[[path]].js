@@ -1,6 +1,6 @@
 const sessionCookieName = "attack_sota_admin";
 const sessionSeconds = 60 * 60 * 4;
-const passwordIterations = 210000;
+const passwordIterations = 100000;
 
 function jsonResponse(data, init = {}) {
   const headers = new Headers(init.headers || {});
@@ -17,8 +17,7 @@ function isStrongPassword(value) {
   return (
     String(value || "").length >= 8 &&
     /[A-Za-z]/.test(value) &&
-    /\d/.test(value) &&
-    /[^A-Za-z0-9]/.test(value)
+    /\d/.test(value)
   );
 }
 
@@ -430,7 +429,7 @@ async function createAdmin(context) {
   if (!username) return errorResponse("Username is required.");
   if (!email) return errorResponse("Email is required.");
   if (!isStrongPassword(password)) {
-    return errorResponse("Password must be at least 8 characters and include letters, digits, and symbols.");
+    return errorResponse("Password must be at least 8 characters and include letters and digits.");
   }
 
   const salt = randomSalt();
@@ -465,7 +464,7 @@ async function updateAdminPassword(context, id) {
   const password = String(body.password || "");
   if (!id) return errorResponse("Administrator id is required.");
   if (!isStrongPassword(password)) {
-    return errorResponse("Password must be at least 8 characters and include letters, digits, and symbols.");
+    return errorResponse("Password must be at least 8 characters and include letters and digits.");
   }
   const salt = randomSalt();
   const hash = await hashPassword(password, salt, passwordIterations);

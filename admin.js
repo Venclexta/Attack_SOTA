@@ -126,8 +126,7 @@ function isStrongPassword(value) {
   return (
     String(value || "").length >= 8 &&
     /[A-Za-z]/.test(value) &&
-    /\d/.test(value) &&
-    /[^A-Za-z0-9]/.test(value)
+    /\d/.test(value)
   );
 }
 
@@ -694,7 +693,7 @@ adminUserForm?.addEventListener("submit", async (event) => {
 
   if (!isStrongPassword(payload.password)) {
     adminUserMessage.textContent =
-      "Password must be at least 8 characters and include letters, digits, and symbols.";
+      "Password must be at least 8 characters and include letters and digits.";
     return;
   }
 
@@ -717,7 +716,7 @@ adminPasswordForm?.addEventListener("submit", async (event) => {
 
   if (!isStrongPassword(password)) {
     adminPasswordMessage.textContent =
-      "Password must be at least 8 characters and include letters, digits, and symbols.";
+      "Password must be at least 8 characters and include letters and digits.";
     return;
   }
 
