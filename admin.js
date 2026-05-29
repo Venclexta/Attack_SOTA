@@ -131,11 +131,11 @@ function isStrongPassword(value) {
 }
 
 function isRemoteBackend() {
-  return Boolean(window.attackBackend?.isRemoteEnabled?.() || window.attackBackend?.isSupabaseEnabled?.());
+  return Boolean(window.attackBackend?.isRemoteEnabled?.());
 }
 
 function backendName() {
-  return window.attackBackend?.backendName?.() || (window.attackBackend?.isSupabaseEnabled?.() ? "Supabase" : "Local drafts");
+  return window.attackBackend?.backendName?.() || "Local drafts";
 }
 
 function splitTags(value) {

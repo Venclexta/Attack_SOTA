@@ -121,7 +121,6 @@
   }
 
   window.attackBackend = {
-    isSupabaseEnabled: () => false,
     isCloudflareEnabled: () => cloudflareEnabled,
     isRemoteEnabled: () => cloudflareEnabled,
     backendName: () => (cloudflareEnabled ? "Cloudflare D1" : "Local drafts"),
