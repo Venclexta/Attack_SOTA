@@ -1,0 +1,74 @@
+import { cpSync, existsSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const rootDir = path.resolve(__dirname, "..");
+const distDir = path.join(rootDir, "cloudflare-dist");
+
+const publishFiles = [
+  "_headers",
+  "admin.html",
+  "admin.js",
+  "algorithm.html",
+  "algorithm.js",
+  "app.js",
+  "backend.js",
+  "cloudflare-config.js",
+  "data.js",
+  "index.html",
+  "manage.html",
+  "robots.txt",
+  "styles.css"
+];
+
+function ensureSourceFilesExist() {
+  const missing = publishFiles.filter((relativePath) => !existsSync(path.join(rootDir, relativePath)));
+  if (missing.length > 0) throw new Error(`Missing publish files:\n- ${missing.join("\n- ")}`);
+}
+
+function rebuildDistDirectory() {
+  rmSync(distDir, { recursive: true, force: true });
+  mkdirSync(distDir, { recursive: true });
+  for (const relativePath of publishFiles) {
+    cpSync(path.join(rootDir, relativePath), path.join(distDir, relativePath), { recursive: true });
+  }
+  writeFileSync(
+    path.join(distDir, "cloudflare-config.js"),
+    'window.CLOUDFLARE_CONFIG = {\n  enabled: true,\n  apiBase: "",\n  publicMode: "static"\n};\n'
+  );
+  writeFileSync(
+    path.join(distDir, "_headers"),
+    `/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'
+
+/admin.html
+  Cache-Control: no-store
+  X-Robots-Tag: noindex, nofollow
+
+/manage.html
+  Cache-Control: no-store
+  X-Robots-Tag: noindex, nofollow
+`
+  );
+  for (const htmlFile of ["admin.html", "algorithm.html", "index.html", "manage.html"]) {
+    const filePath = path.join(distDir, htmlFile);
+    const html = readFileSync(filePath, "utf8")
+      .replace(/\s*<script src="https:\/\/cdn\.jsdelivr\.net\/npm\/@supabase\/supabase-js@2"><\/script>/g, "")
+      .replace(/\s*<script src="supabase-config\.js"><\/script>/g, "");
+    writeFileSync(filePath, html);
+  }
+}
+
+function logSummary() {
+  const files = readdirSync(distDir).sort();
+  console.log(`Rebuilt ${path.relative(rootDir, distDir)} with ${files.length} top-level entries:`);
+  for (const file of files) console.log(`- ${file}`);
+}
+
+ensureSourceFilesExist();
+rebuildDistDirectory();
+logSummary();

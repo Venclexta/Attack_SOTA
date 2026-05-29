@@ -1,0 +1,11 @@
+{
+  "name": "attack-sota",
+  "private": true,
+  "scripts": {
+    "build:cloudflare": "node scripts/build-cloudflare-dist.mjs",
+    "db:cloudflare": "node scripts/generate-cloudflare-d1.mjs",
+    "db:supabase:export": "node scripts/export-supabase-to-json.mjs",
+    "build:netlify": "node scripts/build-netlify-dist.mjs",
+    "test:search": "node scripts/test-search.mjs"
+  }
+}

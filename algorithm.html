@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Algorithm Details · Symmetric Attack SOTA</title>
+    <meta
+      name="description"
+      content="Detailed published attack records for one symmetric primitive."
+    >
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="index.html" aria-label="Symmetric Attack SOTA home">
+        <span class="brand-mark"></span>
+        <span>SYMMETRIC CRYPTANALYSIS INDEX</span>
+      </a>
+      <nav class="nav" aria-label="Site navigation">
+        <a href="index.html#results">Overview</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero detail-hero">
+        <div class="hero-copy">
+          <a class="detail-back-link" href="index.html">← Back to overview</a>
+          <h1 id="algorithm-title">Algorithm</h1>
+          <p id="algorithm-origin" class="algorithm-origin" hidden></p>
+          <div id="algorithm-tags" class="tags"></div>
+        </div>
+      </section>
+
+      <section class="section detail-table-section">
+        <div class="table-shell">
+          <table class="detail-table">
+            <thead>
+              <tr>
+                <th>Attack method</th>
+                <th><button class="sort-button active desc" type="button" data-sort="rounds">Rounds</button></th>
+                <th><button class="sort-button" type="button" data-sort="data">Data</button></th>
+                <th><button class="sort-button" type="button" data-sort="time">Time</button></th>
+                <th><button class="sort-button" type="button" data-sort="memory">Memory</button></th>
+                <th>Source</th>
+              </tr>
+            </thead>
+            <tbody id="algorithm-table"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>Last updated: 2026-05-09</span>
+      <span><a href="admin.html">Admin</a> · <a href="mailto:zhangjn@sjtu.edu.cn">zhangjn@sjtu.edu.cn</a></span>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-config.js"></script>
+    <script src="cloudflare-config.js"></script>
+    <script src="data.js"></script>
+    <script src="backend.js"></script>
+    <script src="algorithm.js"></script>
+  </body>
+</html>

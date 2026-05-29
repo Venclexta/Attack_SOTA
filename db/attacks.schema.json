@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.com/symmetric-attack-sota.schema.json",
+  "title": "Symmetric Attack SOTA Database",
+  "type": "object",
+  "required": ["schemaVersion", "meta", "sources", "records"],
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": { "type": "integer", "minimum": 1 },
+    "generatedAt": { "type": "string", "format": "date-time" },
+    "meta": {
+      "type": "object",
+      "required": ["updated", "note"],
+      "additionalProperties": true,
+      "properties": {
+        "updated": { "type": "string" },
+        "note": { "type": "string" }
+      }
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["label", "url", "note"],
+        "additionalProperties": false,
+        "properties": {
+          "label": { "type": "string" },
+          "url": { "type": "string", "format": "uri" },
+          "note": { "type": "string" }
+        }
+      }
+    },
+    "records": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/attackRecord" }
+    }
+  },
+  "$defs": {
+    "attackRecord": {
+      "type": "object",
+      "required": [
+        "id",
+        "algorithmKey",
+        "algorithm",
+        "structure",
+        "type",
+        "totalRounds",
+        "attackedRounds",
+        "roundCoverage",
+        "attack",
+        "model",
+        "data",
+        "time",
+        "memory",
+        "venue",
+        "year",
+        "paper",
+        "url",
+        "publication",
+        "tags"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
+        "algorithmKey": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
+        "sourceKey": { "type": "string" },
+        "algorithm": { "type": "string" },
+        "structure": { "type": "string" },
+        "designPaper": { "type": "string" },
+        "designVenue": { "type": "string" },
+        "designUrl": { "type": "string" },
+        "type": { "enum": ["block", "hash"] },
+        "totalRounds": { "type": "string" },
+        "attackedRounds": { "type": "string" },
+        "roundCoverage": { "type": ["number", "null"], "minimum": 0, "maximum": 1 },
+        "attack": { "type": "string" },
+        "model": { "type": "string" },
+        "data": { "type": "string" },
+        "time": { "type": "string" },
+        "memory": { "type": "string" },
+        "venue": { "type": "string" },
+        "year": { "type": "integer", "minimum": 1970 },
+        "paper": { "type": "string" },
+        "url": { "type": "string", "format": "uri" },
+        "publication": {
+          "type": "object",
+          "required": ["venue", "year", "title", "url"],
+          "additionalProperties": false,
+          "properties": {
+            "venue": { "type": "string" },
+            "year": { "type": "integer" },
+            "title": { "type": "string" },
+            "url": { "type": "string", "format": "uri" }
+          }
+        },
+        "tags": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string" },
+          "uniqueItems": true
+        }
+      }
+    }
+  }
+}

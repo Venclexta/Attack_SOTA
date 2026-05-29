@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SYMMETRIC CRYPTANALYSIS INDEX | SOTA Attacks</title>
+    <meta
+      name="description"
+      content="A curated index of published attacks on block ciphers, hash functions, and symmetric primitives."
+    >
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="Symmetric Attack SOTA">
+        <span class="brand-mark"></span>
+        <span>SYMMETRIC CRYPTANALYSIS INDEX</span>
+      </a>
+      <nav class="nav" aria-label="Site navigation">
+        <a href="#results">Results</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <h1>SOTA Attacks on Symmetric Primitives</h1>
+          <div class="stats stats-inline" aria-label="Dataset overview">
+            <div>
+              <strong id="stat-algos">0</strong>
+              <span>Algorithms</span>
+            </div>
+            <div>
+              <strong id="stat-attacks">0</strong>
+              <span>Attack records</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="control-band" aria-label="Search and filters">
+        <div class="search-wrap">
+          <div class="search-head">
+            <label for="search">Search</label>
+            <button id="clear-filters" class="ghost-button subtle-button" type="button">Clear filters</button>
+          </div>
+          <input
+            id="search"
+            type="search"
+            placeholder="AES, SHA-1, biclique, CRYPTO 2017..."
+            autocomplete="off"
+          >
+        </div>
+        <details class="tag-panel">
+          <summary>
+            <span>Tags</span>
+            <small id="tag-summary">None selected</small>
+          </summary>
+          <div id="tag-filters" class="tag-sections" aria-label="Tag filters"></div>
+        </details>
+      </section>
+
+      <section id="results" class="section">
+        <div class="section-head section-head-tight">
+          <div>
+            <h2>Best Published Attacks</h2>
+          </div>
+          <div class="section-tools">
+            <div class="segmented results-switch" aria-label="Primitive result view">
+              <button class="segment active" type="button" data-type="block">Block ciphers</button>
+              <button class="segment" type="button" data-type="hash">Hash / permutation</button>
+            </div>
+          </div>
+        </div>
+        <div class="table-shell">
+          <table class="overview-table">
+            <thead>
+              <tr>
+                <th>Algorithm</th>
+                <th>Attack / model</th>
+                <th>Rounds</th>
+                <th>Data</th>
+                <th>Time</th>
+                <th>Memory</th>
+                <th>Publication</th>
+              </tr>
+            </thead>
+            <tbody id="attack-table"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>Last updated: 2026-05-08</span>
+      <span><a href="admin.html">Admin</a> · <a href="mailto:zhangjn@sjtu.edu.cn">zhangjn@sjtu.edu.cn</a></span>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase-config.js"></script>
+    <script src="cloudflare-config.js"></script>
+    <script src="data.js"></script>
+    <script src="backend.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
