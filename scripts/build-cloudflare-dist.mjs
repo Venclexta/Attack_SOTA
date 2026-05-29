@@ -8,6 +8,7 @@ const distDir = path.join(rootDir, "cloudflare-dist");
 
 const publishFiles = [
   "_headers",
+  "404.html",
   "algorithm.html",
   "algorithm.js",
   "app.js",

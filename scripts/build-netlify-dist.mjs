@@ -10,6 +10,7 @@ const zipPath = path.join(rootDir, "netlify-dist.zip");
 
 const publishFiles = [
   "_headers",
+  "404.html",
   "algorithm.html",
   "algorithm.js",
   "app.js",
