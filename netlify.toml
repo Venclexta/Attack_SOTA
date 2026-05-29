@@ -4,3 +4,4 @@
 
 [build.environment]
   CLOUDFLARE_PUBLIC_MODE = "live"
+  CLOUDFLARE_API_BASE = "https://attack-sota.pages.dev"
