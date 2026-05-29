@@ -77,6 +77,7 @@ function assertAlgorithms(label, query, tags, expected) {
 
 assertAlgorithms("Algorithm-name search is not polluted by tags", "AES", [], [
   "AES-128",
+  "AES-192",
   "AES-256"
 ]);
 assertAlgorithms("Search and tag filters are intersected independently", "AES", ["AES finalist"], []);

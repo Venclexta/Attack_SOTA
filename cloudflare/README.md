@@ -14,13 +14,7 @@ The Cloudflare build sets `publicMode: "static"` in `cloudflare-config.js`, so p
 
 ## Generate Database Files
 
-If Supabase contains newer data than the local repository, resume the Supabase project first and export it:
-
-```bash
-npm run db:supabase:export
-```
-
-This rewrites `db/attacks.json` from the live Supabase tables. Administrator passwords cannot be migrated from Supabase Auth; create Cloudflare D1 administrators separately after import.
+`db/attacks.json` is the repository seed dataset. Regenerate the D1 SQL files with:
 
 ```bash
 npm run db:cloudflare
@@ -37,7 +31,7 @@ This creates:
 2. Set the build command to:
 
    ```bash
-   npm run db:cloudflare && npm run build:cloudflare
+   npm run build:cloudflare
    ```
 
 3. Set the build output directory to:

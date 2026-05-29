@@ -1,4 +1,4 @@
-import { cpSync, existsSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from "node:fs";
+import { cpSync, existsSync, mkdirSync, readdirSync, rmSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -54,13 +54,6 @@ function rebuildDistDirectory() {
   X-Robots-Tag: noindex, nofollow
 `
   );
-  for (const htmlFile of ["admin.html", "algorithm.html", "index.html", "manage.html"]) {
-    const filePath = path.join(distDir, htmlFile);
-    const html = readFileSync(filePath, "utf8")
-      .replace(/\s*<script src="https:\/\/cdn\.jsdelivr\.net\/npm\/@supabase\/supabase-js@2"><\/script>/g, "")
-      .replace(/\s*<script src="supabase-config\.js"><\/script>/g, "");
-    writeFileSync(filePath, html);
-  }
 }
 
 function logSummary() {

@@ -4,8 +4,7 @@
   "meta": {
     "updated": "2026-05-10",
     "note": "Curated seed database of published symmetric-cryptanalysis records. Complexities are kept as paper-style strings so unusual models and caveats remain visible.",
-    "source": "supabase-export",
-    "exportedFrom": "https://ydkevgwkrjesvngyetye.supabase.co"
+    "source": "cloudflare-d1-seed"
   },
   "sources": [
     {
