@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Database Control | SYMMETRIC CRYPTANALYSIS INDEX</title>
+    <meta name="robots" content="noindex, nofollow">
+    <meta http-equiv="Cache-Control" content="no-store">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="index.html" aria-label="Symmetric Cryptanalysis Index home">
+        <span class="brand-mark"></span>
+        <span>SYMMETRIC CRYPTANALYSIS INDEX</span>
+      </a>
+      <nav class="nav" aria-label="Control navigation">
+        <a href="index.html#results">Public Site</a>
+        <button id="logout-admin" class="nav-button" type="button" hidden>Sign Out</button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero detail-hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Database Control</p>
+          <h1>Attack Records</h1>
+          <p class="lede">Restricted editor for Cloudflare D1 data.</p>
+        </div>
+      </section>
+
+      <section id="login-section" class="section login-shell" hidden>
+        <form id="login-form" class="login-card" autocomplete="off">
+          <p class="eyebrow">Restricted Access</p>
+          <h2>Administrator</h2>
+          <label>
+            Username or email
+            <input name="username" autocomplete="username" autocapitalize="none" spellcheck="false" required>
+          </label>
+          <label>
+            Password
+            <span class="password-row">
+              <input name="password" type="password" autocomplete="current-password" required>
+              <button class="password-toggle" type="button" data-password-toggle aria-label="Show password"></button>
+            </span>
+          </label>
+          <button class="primary-button" type="submit">Sign in</button>
+          <p id="login-message" class="subtle" aria-live="polite"></p>
+        </form>
+      </section>
+
+      <section id="editor-section" class="section admin-grid" hidden>
+        <form id="record-form" class="admin-form">
+          <input name="editingId" type="hidden">
+
+          <div class="form-section">
+            <p class="eyebrow">Algorithm</p>
+            <label>Algorithm name<input name="algorithm" required placeholder="AES-128"></label>
+            <label>Primitive type
+              <select name="type" required>
+                <option value="block">Block cipher</option>
+                <option value="hash">Hash / permutation</option>
+              </select>
+            </label>
+            <label>Structure
+              <select id="structure-select" name="structure" required></select>
+            </label>
+            <label id="structure-custom-wrap" hidden>Custom structure
+              <input id="structure-custom" name="structureCustom" placeholder="Custom structure">
+            </label>
+            <label>Algorithm year<input name="algorithmYear" type="number" min="1900" max="2200" placeholder="2001"></label>
+            <label>Total rounds<input name="totalRounds" required placeholder="10"></label>
+            <label>Standard / status<input name="standard" placeholder="NIST / ISO/IEC / Research primitive"></label>
+            <label>Design paper title<input name="designPaper" placeholder="Original design paper"></label>
+            <label>Design venue / journal<input name="designVenue" placeholder="FSE 2001"></label>
+            <label>Design paper URL<input name="designUrl" type="url" placeholder="https://..."></label>
+          </div>
+
+          <div class="form-section">
+            <p class="eyebrow">Attack</p>
+            <label>Record id<input name="id" required placeholder="aes-128-2024-integral"></label>
+            <label>Attack method<input name="attack" required placeholder="Integral"></label>
+            <label>Attack model<input name="model" required placeholder="Single-key / chosen-plaintext"></label>
+            <label>Attacked rounds<input name="attackedRounds" required placeholder="8"></label>
+            <label>Data complexity<input name="data" placeholder="2^64"></label>
+            <label>Time complexity<input name="time" placeholder="2^112"></label>
+            <label>Memory complexity<input name="memory" placeholder="2^32"></label>
+          </div>
+
+          <div class="form-section">
+            <p class="eyebrow">Publication</p>
+            <label>Venue<input name="venue" required placeholder="CRYPTO"></label>
+            <label>Year<input name="year" type="number" min="1900" max="2200" required placeholder="2026"></label>
+            <label>Paper title<input name="paper" required placeholder="Paper title"></label>
+            <label>Publication URL<input name="url" type="url" required placeholder="https://..."></label>
+            <div class="tag-picker-block">
+              <p class="tag-title">Tags</p>
+              <div id="record-tag-picker" class="tag-picker"></div>
+            </div>
+          </div>
+
+          <div class="admin-form-actions">
+            <button id="submit-record" class="primary-button" type="submit">Save record</button>
+            <button id="cancel-edit" class="ghost-button" type="button">Cancel edit</button>
+          </div>
+          <p id="admin-message" class="subtle" aria-live="polite"></p>
+        </form>
+
+        <aside class="admin-side">
+          <div class="search-wrap">
+            <div class="search-head">
+              <label for="record-search">Search records</label>
+              <button id="refresh-records" class="ghost-button subtle-button" type="button">Refresh</button>
+            </div>
+            <input id="record-search" type="search" placeholder="AES, differential, CRYPTO..." autocomplete="off">
+          </div>
+          <p id="record-count" class="count">0 records</p>
+        </aside>
+      </section>
+
+      <section id="records-section" class="section" hidden>
+        <div class="table-shell">
+          <table class="detail-table">
+            <thead>
+              <tr>
+                <th>Algorithm</th>
+                <th>Attack</th>
+                <th>Rounds</th>
+                <th>Complexities</th>
+                <th>Source</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="record-table"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>Restricted database control</span>
+      <span><a href="mailto:zhangjn@sjtu.edu.cn">zhangjn@sjtu.edu.cn</a></span>
+    </footer>
+
+    <script src="cloudflare-config.js"></script>
+    <script src="sci-control.js"></script>
+  </body>
+</html>

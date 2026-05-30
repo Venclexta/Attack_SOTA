@@ -17,6 +17,8 @@ const publishFiles = [
   "data.js",
   "index.html",
   "robots.txt",
+  "sci-control.html",
+  "sci-control.js",
   "styles.css"
 ];
 
@@ -42,6 +44,14 @@ function rebuildDistDirectory() {
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=()
   Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'
+
+/sci-control.html
+  Cache-Control: no-store
+  X-Robots-Tag: noindex, nofollow
+
+/sci-control.js
+  Cache-Control: no-store
+  X-Robots-Tag: noindex, nofollow
 `
   );
 }

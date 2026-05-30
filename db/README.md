@@ -9,7 +9,7 @@
 
 Recommended update workflow:
 
-1. Edit production data directly in Cloudflare D1 through the dashboard console, Wrangler, or another trusted database tool.
+1. Edit production data through the restricted Cloudflare admin editor, Cloudflare D1 dashboard console, Wrangler, or another trusted database tool.
 2. Export or manually update `db/attacks.json` when you want the repository snapshot to match the live database.
 3. Run `node scripts/build-data-js.mjs` to refresh the static fallback.
 4. Run `npm run db:cloudflare` to regenerate `cloudflare/d1/schema.sql` and `cloudflare/d1/seed.sql`.

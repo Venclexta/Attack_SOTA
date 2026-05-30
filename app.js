@@ -20,6 +20,25 @@ function normalize(value) {
   return String(value || "").toLowerCase();
 }
 
+function escapeHtml(value) {
+  return String(value ?? "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+function safeUrl(value) {
+  try {
+    const url = new URL(String(value || ""), window.location.href);
+    if (url.protocol === "http:" || url.protocol === "https:") return escapeHtml(url.href);
+  } catch {
+    return "#";
+  }
+  return "#";
+}
+
 function canonical(value) {
   return String(value || "")
     .toLowerCase()
@@ -77,14 +96,14 @@ function coverageMarkup(item) {
 function roundsCoverageMarkup(item) {
   return `
     <div class="rounds-cell">
-      <strong>${item.attackedRounds} / ${item.totalRounds}</strong>
+      <strong>${escapeHtml(item.attackedRounds)} / ${escapeHtml(item.totalRounds)}</strong>
       ${coverageMarkup(item)}
     </div>
   `;
 }
 
 function formatComplexity(value) {
-  return String(value)
+  return escapeHtml(value)
     .replace(/2\^([0-9]+(?:\.[0-9]+)?|n)/g, "2<sup>$1</sup>")
     .replace(/below 2<sup>/g, "below 2<sup>")
     .replace(/up to 2<sup>/g, "up to 2<sup>");
@@ -142,7 +161,7 @@ function bestAttacksByAlgorithm(items) {
 }
 
 function pill(text, className = "") {
-  return `<span class="pill ${className}">${text}</span>`;
+  return `<span class="pill ${escapeHtml(className)}">${escapeHtml(text)}</span>`;
 }
 
 function competitionOptions() {
@@ -234,7 +253,7 @@ function renderTags() {
             ${group.options
               .map((option) => {
                 const active = state.tags.has(option.key) ? " active" : "";
-                return `<button class="tag${active}" type="button" data-tag="${option.key}">${option.label}</button>`;
+                return `<button class="tag${active}" type="button" data-tag="${escapeHtml(option.key)}">${escapeHtml(option.label)}</button>`;
               })
               .join("")}
           </div>
@@ -266,22 +285,22 @@ function renderTable(items) {
         return `
           <tr>
             <td>
-              <a class="row-link" href="${href}">
-                ${item.algorithm}
+              <a class="row-link" href="${escapeHtml(href)}">
+                ${escapeHtml(item.algorithm)}
               </a>
-              <span class="subtle">${algorithmSubtitle(item)}</span>
+              <span class="subtle">${escapeHtml(algorithmSubtitle(item))}</span>
             </td>
             <td>
-              <strong>${item.attack}</strong>
-              <span class="subtle">${item.model}</span>
+              <strong>${escapeHtml(item.attack)}</strong>
+              <span class="subtle">${escapeHtml(item.model)}</span>
             </td>
             <td>${roundsCoverageMarkup(item)}</td>
             <td>${formatComplexity(item.data)}</td>
             <td>${formatComplexity(item.time)}</td>
             <td>${formatComplexity(item.memory)}</td>
             <td>
-              <a href="${item.url}" target="_blank" rel="noreferrer">
-                ${item.venue} ${item.year}
+              <a href="${safeUrl(item.url)}" target="_blank" rel="noreferrer">
+                ${escapeHtml(item.venue)} ${escapeHtml(item.year)}
               </a>
             </td>
           </tr>

@@ -2,6 +2,10 @@ name = "attack-sota"
 compatibility_date = "2026-05-29"
 pages_build_output_dir = "cloudflare-dist"
 
+[vars]
+ALLOWED_ORIGINS = "https://example.com"
+# Set ADMIN_SESSION_SECRET as a Pages secret/environment variable, not in this file.
+
 [[d1_databases]]
 binding = "DB"
 database_name = "attack-sota"

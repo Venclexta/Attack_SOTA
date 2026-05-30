@@ -9,6 +9,25 @@ function normalize(value) {
   return String(value || "").toLowerCase();
 }
 
+function escapeHtml(value) {
+  return String(value ?? "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
+function safeUrl(value) {
+  try {
+    const url = new URL(String(value || ""), window.location.href);
+    if (url.protocol === "http:" || url.protocol === "https:") return escapeHtml(url.href);
+  } catch {
+    return "#";
+  }
+  return "#";
+}
+
 function numbers(value) {
   return String(value).match(/\d+(\.\d+)?/g)?.map(Number) || [];
 }
@@ -37,14 +56,14 @@ function coverageMarkup(item) {
 function roundsCoverageMarkup(item) {
   return `
     <div class="rounds-cell">
-      <strong>${item.attackedRounds} / ${item.totalRounds}</strong>
+      <strong>${escapeHtml(item.attackedRounds)} / ${escapeHtml(item.totalRounds)}</strong>
       ${coverageMarkup(item)}
     </div>
   `;
 }
 
 function formatComplexity(value) {
-  return String(value).replace(/2\^([0-9]+(?:\.[0-9]+)?|n)/g, "2<sup>$1</sup>");
+  return escapeHtml(value).replace(/2\^([0-9]+(?:\.[0-9]+)?|n)/g, "2<sup>$1</sup>");
 }
 
 function isFullRound(item) {
@@ -62,7 +81,7 @@ function compareAttackStrength(a, b) {
 }
 
 function pill(text, className = "") {
-  return `<span class="pill ${className}">${text}</span>`;
+  return `<span class="pill ${escapeHtml(className)}">${escapeHtml(text)}</span>`;
 }
 
 function metricValue(item, key) {
@@ -120,16 +139,16 @@ function tableRow(item) {
   return `
     <tr>
       <td>
-        <strong>${item.attack}</strong>
-        <span class="subtle">${item.model}</span>
+        <strong>${escapeHtml(item.attack)}</strong>
+        <span class="subtle">${escapeHtml(item.model)}</span>
       </td>
       <td>${roundsCoverageMarkup(item)}</td>
       <td>${formatComplexity(item.data)}</td>
       <td>${formatComplexity(item.time)}</td>
       <td>${formatComplexity(item.memory)}</td>
       <td>
-        <a href="${item.url}" target="_blank" rel="noreferrer">${item.venue} ${item.year}</a>
-        <span class="subtle">${item.paper}</span>
+        <a href="${safeUrl(item.url)}" target="_blank" rel="noreferrer">${escapeHtml(item.venue)} ${escapeHtml(item.year)}</a>
+        <span class="subtle">${escapeHtml(item.paper)}</span>
       </td>
     </tr>
   `;
@@ -161,13 +180,13 @@ function renderAlgorithmPage() {
   if (origin) {
     const venueParts = bestByStrength.designVenue || "";
     if (bestByStrength.designPaper && bestByStrength.designUrl) {
-      origin.innerHTML = `<a href="${bestByStrength.designUrl}" target="_blank" rel="noreferrer">${bestByStrength.designPaper}</a>${
-        venueParts ? ` <span>${venueParts}</span>` : ""
+      origin.innerHTML = `<a href="${safeUrl(bestByStrength.designUrl)}" target="_blank" rel="noreferrer">${escapeHtml(bestByStrength.designPaper)}</a>${
+        venueParts ? ` <span>${escapeHtml(venueParts)}</span>` : ""
       }`;
       origin.hidden = false;
     } else if (bestByStrength.designPaper || venueParts) {
-      origin.innerHTML = `${bestByStrength.designPaper || ""}${bestByStrength.designPaper && venueParts ? " " : ""}${
-        venueParts || ""
+      origin.innerHTML = `${escapeHtml(bestByStrength.designPaper || "")}${bestByStrength.designPaper && venueParts ? " " : ""}${
+        escapeHtml(venueParts || "")
       }`;
       origin.hidden = false;
     } else {
