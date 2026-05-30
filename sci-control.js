@@ -157,11 +157,19 @@
     target.dataset.tone = tone;
   }
 
+  function setControlsDisabled(container, disabled) {
+    container?.querySelectorAll("input, select, textarea, button").forEach((control) => {
+      control.disabled = disabled;
+    });
+  }
+
   function setAuthenticated(authenticated) {
     loginSection.hidden = authenticated;
     editorSection.hidden = !authenticated;
     recordsSection.hidden = !authenticated;
     logoutButton.hidden = !authenticated;
+    setControlsDisabled(editorSection, !authenticated);
+    setControlsDisabled(recordsSection, !authenticated);
   }
 
   function populateStructureOptions() {
