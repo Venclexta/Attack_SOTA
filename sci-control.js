@@ -225,6 +225,7 @@
     const year = Number(data.get("year")) || null;
     const paper = String(data.get("paper") || "").trim();
     return {
+      originalId: String(data.get("editingId") || "").trim(),
       id: String(data.get("id") || "").trim(),
       algorithm,
       structure: activeStructureValue(),
@@ -436,12 +437,12 @@
     const record = formRecord();
     setMessage(message, "Saving...");
     try {
-      await api("/api/admin/records", {
+      const saved = await api("/api/admin/records", {
         method: "POST",
         body: JSON.stringify(record)
       });
       resetForm();
-      setMessage(message, `Saved "${record.id}".`);
+      setMessage(message, `Saved "${saved.id || record.id}".`);
       await loadRecords();
     } catch (error) {
       setMessage(message, `Save failed: ${error.message}`, "error");

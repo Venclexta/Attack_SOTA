@@ -439,6 +439,7 @@ function sourceKey(record) {
 
 function normalizeRecord(input) {
   const record = {
+    originalId: cleanString(input.originalId, 160),
     id: cleanString(input.id, 160),
     algorithm: cleanString(input.algorithm, 160),
     structure: cleanString(input.structure, 120),
@@ -520,6 +521,23 @@ function buildRows(record) {
   };
 }
 
+async function canonicalAttackId(env, record) {
+  const existing = await env.DB.prepare(
+    `select id
+     from attacks
+     where algorithm_id = ? and lower(attack) = lower(?)
+     order by
+       case when id = ? then 0 when id = ? then 1 else 2 end,
+       updated_at desc,
+       id
+     limit 1`
+  )
+    .bind(record.algorithmKey, record.attack, record.originalId || "", record.id)
+    .first();
+
+  return existing?.id || record.originalId || record.id;
+}
+
 async function loginAdmin(context) {
   await ensureAdminTables(context.env);
   if (!sessionSecret(context.env)) return errorResponse("Administrator session secret is not configured.", 500);
@@ -575,9 +593,10 @@ async function saveRecord(context) {
   const admin = await requireAdmin(context);
   if (!admin) return errorResponse("Administrator session required.", 401);
   const record = normalizeRecord(await readJson(context.request));
+  record.id = await canonicalAttackId(context.env, record);
   const rows = buildRows(record);
 
-  await context.env.DB.batch([
+  const statements = [
     context.env.DB.prepare(
       `insert into algorithms
          (id, name, structure, algorithm_year, design_paper, design_venue, design_url, standard, type, total_rounds, tags)
@@ -620,8 +639,18 @@ async function saveRecord(context) {
          time_complexity = excluded.time_complexity,
          memory_complexity = excluded.memory_complexity,
          updated_at = current_timestamp`
-    ).bind(...rows.attack)
-  ]);
+    ).bind(...rows.attack),
+    context.env.DB.prepare(
+      `delete from attacks
+       where algorithm_id = ? and lower(attack) = lower(?) and id <> ?`
+    ).bind(record.algorithmKey, record.attack, record.id)
+  ];
+
+  if (record.originalId && record.originalId !== record.id) {
+    statements.push(context.env.DB.prepare("delete from attacks where id = ?").bind(record.originalId));
+  }
+
+  await context.env.DB.batch(statements);
 
   return jsonResponse({ id: record.id }, { headers: { "cache-control": "no-store" } });
 }
