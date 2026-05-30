@@ -49,6 +49,10 @@ function rebuildDistDirectory() {
   Cache-Control: no-store
   X-Robots-Tag: noindex, nofollow
 
+/sci-control
+  Cache-Control: no-store
+  X-Robots-Tag: noindex, nofollow
+
 /sci-control.js
   Cache-Control: no-store
   X-Robots-Tag: noindex, nofollow
