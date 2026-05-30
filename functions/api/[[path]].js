@@ -639,6 +639,10 @@ function isAdminPath(segments) {
   return segments[0] === "admin";
 }
 
+function isPublicDataPath(segments) {
+  return segments.length === 1 && segments[0] === "data";
+}
+
 export async function onRequest(context) {
   const { request, env } = context;
   const method = request.method.toUpperCase();
@@ -654,11 +658,16 @@ export async function onRequest(context) {
         ? new Response(null, { status: 204 })
         : errorResponse("Invalid request origin.", 403);
     }
-    return withCors(new Response(null, { status: 204 }), request, env);
+    return isPublicDataPath(segments)
+      ? withCors(new Response(null, { status: 204 }), request, env)
+      : errorResponse("Not found.", 404);
   }
 
   if (isAdminPath(segments) && !isSameOrigin(request)) {
     return errorResponse("Invalid request origin.", 403);
+  }
+  if (!isAdminPath(segments) && (method !== "GET" || !isPublicDataPath(segments))) {
+    return errorResponse("Not found.", 404);
   }
   if (!isAdminPath(segments) && !isAllowedPublicOrigin(request, env)) {
     return withCors(errorResponse("Invalid request origin.", 403), request, env);
@@ -667,7 +676,7 @@ export async function onRequest(context) {
   try {
     let response;
 
-    if (method === "GET" && segments.length === 1 && segments[0] === "data") response = await listData(env);
+    if (method === "GET" && isPublicDataPath(segments)) response = await listData(env);
     else if (method === "POST" && segments[0] === "admin" && segments[1] === "login") response = await loginAdmin(context);
     else if (method === "POST" && segments[0] === "admin" && segments[1] === "logout") {
       response = jsonResponse(
