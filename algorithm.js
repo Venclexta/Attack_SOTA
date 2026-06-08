@@ -9,6 +9,7 @@ const sortState = {
 const algorithmTable = document.querySelector("#algorithm-table");
 const exportButton = document.querySelector("#export-latex");
 const clearExportButton = document.querySelector("#clear-latex-selection");
+const selectAllButton = document.querySelector("#select-all-records");
 const latexCount = document.querySelector("#latex-count");
 const latexOutput = document.querySelector("#latex-output");
 
@@ -213,6 +214,7 @@ function updateExportControls() {
   if (latexCount) latexCount.textContent = `${count} selected`;
   if (exportButton) exportButton.disabled = count === 0;
   if (clearExportButton) clearExportButton.disabled = count === 0;
+  if (selectAllButton) selectAllButton.disabled = currentRecords.length === 0 || count === currentRecords.length;
   if (count === 0 && latexOutput) {
     latexOutput.hidden = true;
     latexOutput.value = "";
@@ -382,6 +384,10 @@ async function init() {
   exportButton.addEventListener("click", exportSelectedLatex);
   clearExportButton.addEventListener("click", () => {
     selectedRecordIds.clear();
+    renderAlgorithmPage();
+  });
+  selectAllButton.addEventListener("click", () => {
+    currentRecords.forEach((item) => selectedRecordIds.add(item.id));
     renderAlgorithmPage();
   });
   renderAlgorithmPage();
