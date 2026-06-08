@@ -504,6 +504,46 @@ table {
   min-width: 1040px;
 }
 
+.export-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  margin: -10px 0 10px;
+}
+
+.latex-output {
+  width: 100%;
+  min-height: 160px;
+  margin: 0 0 12px;
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 12px;
+  resize: vertical;
+}
+
+.method-cell {
+  vertical-align: top;
+}
+
+.record-select {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.record-select input {
+  width: 14px;
+  height: 14px;
+  margin: 0;
+}
+
 .admin-grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 300px;

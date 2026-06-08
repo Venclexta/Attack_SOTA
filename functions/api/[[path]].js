@@ -433,6 +433,41 @@ function cleanTags(value) {
   ];
 }
 
+function normalizedWords(value) {
+  return String(value || "")
+    .toLowerCase()
+    .replace(/[-_/]+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function normalizeKeySetting(value, type) {
+  const text = cleanString(value, 200);
+  const words = normalizedWords(text);
+  if (!words) return "";
+  if (words.includes("related tweakey")) return "Related-Tweakey";
+  if (words.includes("single tweakey")) return "Single-Tweakey";
+  if (words.includes("related key")) return "Related-Key";
+  if (words.includes("chosen key")) return "Chosen-Key";
+  if (words.includes("known key")) return "Known-Key";
+  if (words.includes("single key")) return "Single-Key";
+  if (
+    type === "block" &&
+    /key recovery|chosen plaintext|known plaintext|plaintext|ciphertext|distinguish/.test(words)
+  ) {
+    return "Single-Key";
+  }
+  if (type === "hash" || /collision|preimage|freestart|permutation|sponge|hash/.test(words)) return "Unkeyed";
+
+  return (
+    text
+      .split("/")
+      .map((part) => part.trim())
+      .filter((part) => !/chosen-?plaintext|known-?plaintext|plaintext|ciphertext/i.test(part))
+      .join(" / ") || text
+  );
+}
+
 function sourceKey(record) {
   return slug(`${record.venue}-${record.year}-${record.paper}`);
 }
@@ -471,7 +506,7 @@ function normalizeRecord(input) {
   if (!record.structure) throw new Error("Structure is required.");
   if (!record.totalRounds) throw new Error("Total rounds is required.");
   if (!record.attack) throw new Error("Attack method is required.");
-  if (!record.model) throw new Error("Attack model is required.");
+  if (!record.model) throw new Error("Key setting is required.");
   if (!record.attackedRounds) throw new Error("Attacked rounds is required.");
   if (!record.venue) throw new Error("Publication venue is required.");
   if (!Number.isInteger(record.year) || record.year < 1900 || record.year > 2200) {
@@ -486,6 +521,7 @@ function normalizeRecord(input) {
 
   record.algorithmKey = slug(record.algorithmKey || record.algorithm);
   record.sourceKey = slug(record.sourceKey || sourceKey(record));
+  record.model = normalizeKeySetting(record.model, record.type);
   record.roundCoverage = roundCoverage(record.totalRounds, record.attackedRounds);
   return record;
 }
@@ -519,23 +555,6 @@ function buildRows(record) {
       record.memory
     ]
   };
-}
-
-async function canonicalAttackId(env, record) {
-  const existing = await env.DB.prepare(
-    `select id
-     from attacks
-     where algorithm_id = ? and lower(attack) = lower(?)
-     order by
-       case when id = ? then 0 when id = ? then 1 else 2 end,
-       updated_at desc,
-       id
-     limit 1`
-  )
-    .bind(record.algorithmKey, record.attack, record.originalId || "", record.id)
-    .first();
-
-  return existing?.id || record.originalId || record.id;
 }
 
 async function loginAdmin(context) {
@@ -593,10 +612,10 @@ async function saveRecord(context) {
   const admin = await requireAdmin(context);
   if (!admin) return errorResponse("Administrator session required.", 401);
   const record = normalizeRecord(await readJson(context.request));
-  record.id = await canonicalAttackId(context.env, record);
+  if (record.originalId) record.id = record.originalId;
   const rows = buildRows(record);
 
-  const statements = [
+  await context.env.DB.batch([
     context.env.DB.prepare(
       `insert into algorithms
          (id, name, structure, algorithm_year, design_paper, design_venue, design_url, standard, type, total_rounds, tags)
@@ -639,18 +658,8 @@ async function saveRecord(context) {
          time_complexity = excluded.time_complexity,
          memory_complexity = excluded.memory_complexity,
          updated_at = current_timestamp`
-    ).bind(...rows.attack),
-    context.env.DB.prepare(
-      `delete from attacks
-       where algorithm_id = ? and lower(attack) = lower(?) and id <> ?`
-    ).bind(record.algorithmKey, record.attack, record.id)
-  ];
-
-  if (record.originalId && record.originalId !== record.id) {
-    statements.push(context.env.DB.prepare("delete from attacks where id = ?").bind(record.originalId));
-  }
-
-  await context.env.DB.batch(statements);
+    ).bind(...rows.attack)
+  ]);
 
   return jsonResponse({ id: record.id }, { headers: { "cache-control": "no-store" } });
 }

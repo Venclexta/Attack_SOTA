@@ -32,6 +32,12 @@
       </section>
 
       <section class="section detail-table-section">
+        <div class="export-toolbar" aria-label="LaTeX export tools">
+          <span id="latex-count" class="subtle">0 selected</span>
+          <button id="export-latex" class="ghost-button subtle-button" type="button" disabled>Copy LaTeX table</button>
+          <button id="clear-latex-selection" class="ghost-button subtle-button" type="button" disabled>Clear</button>
+        </div>
+        <textarea id="latex-output" class="latex-output" readonly hidden aria-label="Generated LaTeX table"></textarea>
         <div class="table-shell">
           <table class="detail-table">
             <thead>
