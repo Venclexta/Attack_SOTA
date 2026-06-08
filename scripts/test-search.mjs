@@ -26,13 +26,19 @@ function fieldMatches(field, query, tokens) {
 
 function textSearchFields(item) {
   return [
+    item.id,
+    item.algorithmKey,
+    item.sourceKey,
     item.algorithm,
     item.structure,
     item.attack,
     item.model,
     item.venue,
     item.year,
-    item.paper
+    item.paper,
+    item.data,
+    item.time,
+    item.memory
   ];
 }
 
@@ -62,6 +68,13 @@ function algorithms(rows) {
   return [...new Set(rows.map((item) => item.algorithm))].sort();
 }
 
+function recordSearchMode(query = "") {
+  const q = canonical(query);
+  if (!q) return false;
+  const tokens = queryTokens(query);
+  return !attacks.some((item) => fieldMatches(item.algorithm, q, tokens));
+}
+
 function assertAlgorithms(label, query, tags, expected) {
   const actual = algorithms(filteredAttacks(query, tags));
   const same =
@@ -72,6 +85,13 @@ function assertAlgorithms(label, query, tags, expected) {
         actual.join(", ") || "(none)"
       }`
     );
+  }
+}
+
+function assertRecordCount(label, query, expected) {
+  const actual = filteredAttacks(query).length;
+  if (actual !== expected) {
+    throw new Error(`${label}\nexpected: ${expected}\nactual:   ${actual}`);
   }
 }
 
@@ -87,5 +107,8 @@ assertAlgorithms("SHA-3 name search should not return SHA-3 finalists", "SHA-3",
 ]);
 assertAlgorithms("Tag text typed into search is not a tag filter", "National standard", [], []);
 assertAlgorithms("Venue/year text search still works", "CRYPTO 2017", [], ["SHA-1"]);
+assertRecordCount("Record-field search should not collapse multiple matching rows", "chosen-prefix", 3);
+if (!recordSearchMode("chosen-prefix")) throw new Error("chosen-prefix should use record-search rendering mode");
+if (recordSearchMode("MD5")) throw new Error("MD5 should remain algorithm-name rendering mode");
 
 console.log("Search tests passed");
