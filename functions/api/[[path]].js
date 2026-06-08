@@ -321,7 +321,7 @@ function mapJoinedRow(row) {
     type: row.algorithm_type,
     totalRounds: row.total_rounds,
     attackedRounds: row.attacked_rounds,
-    attack: row.attack,
+    attack: canonicalAttackMethod(row.attack),
     model: row.model,
     data: row.data_complexity,
     time: row.time_complexity,
@@ -468,6 +468,13 @@ function normalizeKeySetting(value, type) {
   );
 }
 
+function canonicalAttackMethod(value) {
+  const text = cleanString(value, 160);
+  const words = normalizedWords(text);
+  if (/(\bmitm\b|meet in the middle)/i.test(words)) return "Meet-in-the-Middle";
+  return text;
+}
+
 function sourceKey(record) {
   return slug(`${record.venue}-${record.year}-${record.paper}`);
 }
@@ -521,6 +528,7 @@ function normalizeRecord(input) {
 
   record.algorithmKey = slug(record.algorithmKey || record.algorithm);
   record.sourceKey = slug(record.sourceKey || sourceKey(record));
+  record.attack = canonicalAttackMethod(record.attack);
   record.model = normalizeKeySetting(record.model, record.type);
   record.roundCoverage = roundCoverage(record.totalRounds, record.attackedRounds);
   return record;

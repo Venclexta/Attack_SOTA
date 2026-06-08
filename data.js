@@ -6,53 +6,18 @@ window.attackData = {
   },
   "sources": [
     {
-      "id": "icisc-2014-bicliques-minimal-data-time-aes",
-      "venue": "ICISC",
-      "year": 2014,
-      "title": "Bicliques with Minimal Data and Time Complexity for AES",
-      "url": "https://link.springer.com/chapter/10.1007/978-3-319-15943-0_10"
-    },
-    {
-      "id": "eurocrypt-2023-truncated-boomerang-aes",
-      "venue": "EUROCRYPT",
-      "year": 2023,
-      "title": "Truncated boomerang attacks and application to AES-based ciphers",
-      "url": "https://link.springer.com/chapter/10.1007/978-3-031-30634-1_1"
-    },
-    {
-      "id": "indocrypt-2010-impossible-differential-aes-128",
-      "venue": "INDOCRYPT",
-      "year": 2010,
-      "title": "Improved Impossible Differential Cryptanalysis of 7-Round AES-128",
-      "url": "https://link.springer.com/chapter/10.1007/978-3-642-17401-8_20"
-    },
-    {
-      "id": "indocrypt-2009-improved-mitm-aes",
-      "venue": "INDOCRYPT",
-      "year": 2009,
-      "title": "Improved Meet-in-the-Middle Attacks on AES",
-      "url": "https://link.springer.com/chapter/10.1007/978-3-642-10628-6_10"
-    },
-    {
-      "id": "asiacrypt-2022-revisiting-related-key-boomerang-aes-computer-aided-tool",
+      "id": "asiacrypt-2007-present-an-ultra-lightweight-block-cipher",
       "venue": "ASIACRYPT",
-      "year": 2022,
-      "title": "Revisiting Related-Key Boomerang Attacks on AES Using Computer-Aided Tool",
-      "url": "https://link.springer.com/chapter/10.1007/978-3-031-22969-5_3"
+      "year": 2007,
+      "title": "PRESENT: An Ultra-Lightweight Block Cipher",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-540-76900-2_31"
     },
     {
-      "id": "indocrypt-2008-new-impossible-differential-aes",
-      "venue": "INDOCRYPT",
-      "year": 2008,
-      "title": "New Impossible Differential Attacks on AES",
-      "url": "https://link.springer.com/chapter/10.1007/978-3-540-89754-5_22"
-    },
-    {
-      "id": "ctrsa-2024-improved-mitm-9rounds-aes-192",
-      "venue": "CT-RSA",
-      "year": 2024,
-      "title": "Improved Meet-in-the-Middle Attacks on Nine Rounds of the AES-192 Block Cipher",
-      "url": "https://link.springer.com/chapter/10.1007/978-3-031-58868-6_6"
+      "id": "asiacrypt-2009-preimages-for-step-reduced-sha-2",
+      "venue": "ASIACRYPT",
+      "year": 2009,
+      "title": "Preimages for Step-Reduced SHA-2",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-642-10366-7_34"
     },
     {
       "id": "asiacrypt-2009-related-key-cryptanalysis-of-the-full-aes-192-and-aes-256",
@@ -62,74 +27,39 @@ window.attackData = {
       "url": "https://link.springer.com/chapter/10.1007/978-3-642-10366-7_1"
     },
     {
-      "id": "cic-2026-improved-related-key-differential-aes-256",
-      "venue": "IACR CiC",
-      "year": 2026,
-      "title": "Improved Related-Key Differential Attacks against AES-256",
-      "url": "https://cic.iacr.org/p/2/4/39"
+      "id": "asiacrypt-2009-zero-sum-distinguishers-for-reduced-keccak-f-and-hamsi-256",
+      "venue": "ASIACRYPT",
+      "year": 2009,
+      "title": "Zero-Sum Distinguishers for Reduced Keccak-f and Hamsi-256",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-642-10366-7_17"
     },
     {
-      "id": "dcc-2026-improved-mitm-attack-10-rounds-aes-256",
-      "venue": "DCC",
-      "year": 2023,
-      "title": "Improved meet-in-the-middle attack on 10 rounds of the AES-256 block cipher",
-      "url": "https://link.springer.com/article/10.1007/s10623-023-01323-4"
-    },
-    {
-      "id": "jcst-2007-impossible-differential-cryptanalysis-of-reduced-round-aria-and-camellia",
-      "venue": "JCST",
-      "year": 2007,
-      "title": "Impossible Differential Cryptanalysis of Reduced-Round ARIA and Camellia",
-      "url": "https://jcst.ict.ac.cn/en/article/id/1363"
-    },
-    {
-      "id": "fse-2016-practical-cryptanalysis-of-round-reduced-ascon",
-      "venue": "FSE",
-      "year": 2016,
-      "title": "Practical Cryptanalysis of Round-Reduced Ascon",
-      "url": "https://link.springer.com/chapter/10.1007/978-3-662-52993-5_18"
-    },
-    {
-      "id": "fse-2010-a-framework-for-the-analysis-of-sha-3-candidates",
-      "venue": "FSE",
-      "year": 2010,
-      "title": "A Framework for the Analysis of SHA-3 Candidates",
-      "url": "https://link.springer.com/chapter/10.1007/978-3-642-13858-4_14"
-    },
-    {
-      "id": "fse-2012-new-observations-on-impossible-differential-cryptanalysis-of-reduced-round-camellia",
-      "venue": "FSE",
+      "id": "asiacrypt-2012-prince-a-low-latency-block-cipher-for-pervasive-computing-applications",
+      "venue": "ASIACRYPT",
       "year": 2012,
-      "title": "New Observations on Impossible Differential Cryptanalysis of Reduced-Round Camellia",
-      "url": "https://link.springer.com/chapter/10.1007/978-3-642-34047-5_6"
+      "title": "PRINCE - A Low-Latency Block Cipher for Pervasive Computing Applications",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-642-34961-4_12"
     },
     {
-      "id": "eurocrypt-2016-improved-differential-linear-cryptanalysis-of-7-round-chaskey-with-partitioning",
-      "venue": "EUROCRYPT",
-      "year": 2016,
-      "title": "Improved Differential-Linear Cryptanalysis of 7-Round Chaskey with Partitioning",
-      "url": "https://link.springer.com/chapter/10.1007/978-3-662-49890-3_14"
+      "id": "asiacrypt-2022-revisiting-related-key-boomerang-aes-computer-aided-tool",
+      "venue": "ASIACRYPT",
+      "year": 2022,
+      "title": "Revisiting Related-Key Boomerang Attacks on AES Using Computer-Aided Tool",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-031-22969-5_3"
     },
     {
-      "id": "jcst-2011-impossible-differential-attacks-on-13-round-clefia-128",
-      "venue": "JCST",
+      "id": "ches-2011-led-a-lightweight-block-cipher",
+      "venue": "CHES",
       "year": 2011,
-      "title": "Impossible Differential Attacks on 13-Round CLEFIA-128",
-      "url": "https://jcst.ict.ac.cn/EN/10.1007/s11390-011-1173-0"
+      "title": "LED: A Lightweight Block Cipher",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-642-23951-9_22"
     },
     {
-      "id": "crypto-1990-differential-cryptanalysis-of-des-like-cryptosystems",
-      "venue": "CRYPTO",
-      "year": 1990,
-      "title": "Differential Cryptanalysis of DES-like Cryptosystems",
-      "url": "https://link.springer.com/chapter/10.1007/3-540-38424-3_1"
-    },
-    {
-      "id": "eurocrypt-1993-linear-cryptanalysis-method-for-des-cipher",
-      "venue": "EUROCRYPT",
-      "year": 1993,
-      "title": "Linear Cryptanalysis Method for DES Cipher",
-      "url": "https://link.springer.com/chapter/10.1007/3-540-48285-7_33"
+      "id": "ches-2011-spongent-a-lightweight-hash-function",
+      "venue": "CHES",
+      "year": 2011,
+      "title": "Spongent: A Lightweight Hash Function",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-642-23951-9_20"
     },
     {
       "id": "ches-2017-gift-a-small-present",
@@ -146,214 +76,18 @@ window.attackData = {
       "url": "https://link.springer.com/chapter/10.1007/978-3-319-66787-4_18"
     },
     {
-      "id": "fse-2009-the-rebound-attack-cryptanalysis-of-reduced-whirlpool-and-gr-stl",
-      "venue": "FSE",
-      "year": 2009,
-      "title": "The Rebound Attack: Cryptanalysis of Reduced Whirlpool and Grøstl",
-      "url": "https://link.springer.com/chapter/10.1007/978-3-642-03317-9_17"
+      "id": "cic-2026-improved-related-key-differential-aes-256",
+      "venue": "IACR CiC",
+      "year": 2026,
+      "title": "Improved Related-Key Differential Attacks against AES-256",
+      "url": "https://cic.iacr.org/p/2/4/39"
     },
     {
-      "id": "fse-2010-analysis-of-the-sha-3-candidate-jh",
-      "venue": "FSE",
-      "year": 2010,
-      "title": "Analysis of the SHA-3 Candidate JH",
-      "url": "https://link.springer.com/chapter/10.1007/978-3-642-13858-4_15"
-    },
-    {
-      "id": "crypto-2010-a-practical-time-related-key-attack-on-the-kasumi-cryptosystem-used-in-gsm-and-3g-telephony",
+      "id": "crypto-1990-differential-cryptanalysis-of-des-like-cryptosystems",
       "venue": "CRYPTO",
-      "year": 2010,
-      "title": "A Practical-Time Related-Key Attack on the KASUMI Cryptosystem Used in GSM and 3G Telephony",
-      "url": "https://doi.org/10.1007/978-3-642-14623-7_21"
-    },
-    {
-      "id": "keccak-team-2025-crunchy-crypto-collision-and-pre-image-contest",
-      "venue": "Keccak Team",
-      "year": 2025,
-      "title": "Crunchy Crypto Collision and Pre-image Contest",
-      "url": "https://keccak.team/crunchy_contest.html"
-    },
-    {
-      "id": "asiacrypt-2009-zero-sum-distinguishers-for-reduced-keccak-f-and-hamsi-256",
-      "venue": "ASIACRYPT",
-      "year": 2009,
-      "title": "Zero-Sum Distinguishers for Reduced Keccak-f and Hamsi-256",
-      "url": "https://link.springer.com/chapter/10.1007/978-3-642-10366-7_17"
-    },
-    {
-      "id": "sac-2015-meet-in-the-middle-attacks-on-reduced-round-kuznyechik",
-      "venue": "SAC",
-      "year": 2015,
-      "title": "Meet-in-the-Middle Attacks on Reduced-Round Kuznyechik",
-      "url": "https://link.springer.com/chapter/10.1007/978-3-319-31301-6_21"
-    },
-    {
-      "id": "ches-2011-led-a-lightweight-block-cipher",
-      "venue": "CHES",
-      "year": 2011,
-      "title": "LED: A Lightweight Block Cipher",
-      "url": "https://link.springer.com/chapter/10.1007/978-3-642-23951-9_22"
-    },
-    {
-      "id": "eurocrypt-2005-collisions-for-hash-functions-md4-md5-haval-128-and-ripemd",
-      "venue": "EUROCRYPT",
-      "year": 2005,
-      "title": "Collisions for Hash Functions MD4, MD5, HAVAL-128 and RIPEMD",
-      "url": "https://link.springer.com/chapter/10.1007/11426639_36"
-    },
-    {
-      "id": "eurocrypt-2007-chosen-prefix-collisions-for-md5-and-colliding-x-509-certificates",
-      "venue": "EUROCRYPT",
-      "year": 2007,
-      "title": "Chosen-Prefix Collisions for MD5 and Colliding X.509 Certificates",
-      "url": "https://link.springer.com/chapter/10.1007/978-3-540-72540-4_1"
-    },
-    {
-      "id": "eurocrypt-2005-how-to-break-md5-and-other-hash-functions",
-      "venue": "EUROCRYPT",
-      "year": 2005,
-      "title": "How to Break MD5 and Other Hash Functions",
-      "url": "https://link.springer.com/chapter/10.1007/11426639_2"
-    },
-    {
-      "id": "crypto-2016-a-2-70-attack-on-the-full-misty1",
-      "venue": "CRYPTO",
-      "year": 2016,
-      "title": "A 2^70 Attack on the Full MISTY1",
-      "url": "https://doi.org/10.1007/978-3-662-53018-4_16"
-    },
-    {
-      "id": "crypto-2011-photon-a-lightweight-hash-function-family",
-      "venue": "CRYPTO",
-      "year": 2011,
-      "title": "PHOTON: A Lightweight Hash Function Family",
-      "url": "https://link.springer.com/chapter/10.1007/978-3-642-22792-9_13"
-    },
-    {
-      "id": "asiacrypt-2007-present-an-ultra-lightweight-block-cipher",
-      "venue": "ASIACRYPT",
-      "year": 2007,
-      "title": "PRESENT: An Ultra-Lightweight Block Cipher",
-      "url": "https://link.springer.com/chapter/10.1007/978-3-540-76900-2_31"
-    },
-    {
-      "id": "fse-2009-single-key-cryptanalysis-of-the-full-present",
-      "venue": "FSE",
-      "year": 2009,
-      "title": "Single-Key Cryptanalysis of the Full PRESENT",
-      "url": "https://link.springer.com/chapter/10.1007/978-3-642-03317-9_15"
-    },
-    {
-      "id": "asiacrypt-2012-prince-a-low-latency-block-cipher-for-pervasive-computing-applications",
-      "venue": "ASIACRYPT",
-      "year": 2012,
-      "title": "PRINCE - A Low-Latency Block Cipher for Pervasive Computing Applications",
-      "url": "https://link.springer.com/chapter/10.1007/978-3-642-34961-4_12"
-    },
-    {
-      "id": "fse-2000-correlations-in-rc6-with-a-reduced-number-of-rounds",
-      "venue": "FSE",
-      "year": 2000,
-      "title": "Correlations in RC6 with a Reduced Number of Rounds",
-      "url": "https://link.springer.com/chapter/10.1007/3-540-44706-7_7"
-    },
-    {
-      "id": "fse-2003-differential-linear-cryptanalysis-of-serpent",
-      "venue": "FSE",
-      "year": 2003,
-      "title": "Differential-Linear Cryptanalysis of Serpent",
-      "url": "https://link.springer.com/chapter/10.1007/978-3-540-39887-5_2"
-    },
-    {
-      "id": "crypto-2017-the-first-collision-for-full-sha-1",
-      "venue": "CRYPTO",
-      "year": 2017,
-      "title": "The First Collision for Full SHA-1",
-      "url": "https://link.springer.com/chapter/10.1007/978-3-319-63688-7_19"
-    },
-    {
-      "id": "eurocrypt-2016-freestart-collision-for-full-sha-1",
-      "venue": "EUROCRYPT",
-      "year": 2016,
-      "title": "Freestart Collision for Full SHA-1",
-      "url": "https://link.springer.com/chapter/10.1007/978-3-662-49890-3_18"
-    },
-    {
-      "id": "crypto-2005-finding-collisions-in-the-full-sha-1",
-      "venue": "CRYPTO",
-      "year": 2005,
-      "title": "Finding Collisions in the Full SHA-1",
-      "url": "https://link.springer.com/chapter/10.1007/11535218_2"
-    },
-    {
-      "id": "fse-2008-collision-attacks-on-31-step-sha-256",
-      "venue": "FSE",
-      "year": 2008,
-      "title": "Collision Attacks on 31-Step SHA-256",
-      "url": "https://link.springer.com/chapter/10.1007/978-3-540-71039-4_17"
-    },
-    {
-      "id": "asiacrypt-2009-preimages-for-step-reduced-sha-2",
-      "venue": "ASIACRYPT",
-      "year": 2009,
-      "title": "Preimages for Step-Reduced SHA-2",
-      "url": "https://link.springer.com/chapter/10.1007/978-3-642-10366-7_34"
-    },
-    {
-      "id": "indocrypt-2015-improved-linear-cryptanalysis-of-reduced-round-simon-32-and-simon-48",
-      "venue": "INDOCRYPT",
-      "year": 2015,
-      "title": "Improved Linear Cryptanalysis of Reduced-Round SIMON-32 and SIMON-48",
-      "url": "https://link.springer.com/chapter/10.1007/978-3-319-26617-6_9"
-    },
-    {
-      "id": "fse-2012-bicliques-for-preimages-attacks-on-skein-512-and-the-sha-2-family",
-      "venue": "FSE",
-      "year": 2012,
-      "title": "Bicliques for Preimages: Attacks on Skein-512 and the SHA-2 Family",
-      "url": "https://link.springer.com/chapter/10.1007/978-3-642-34047-5_15"
-    },
-    {
-      "id": "crypto-2016-the-skinny-family-of-block-ciphers-and-its-low-latency-variant-mantis",
-      "venue": "CRYPTO",
-      "year": 2016,
-      "title": "The SKINNY Family of Block Ciphers and Its Low-Latency Variant MANTIS",
-      "url": "https://link.springer.com/chapter/10.1007/978-3-662-53008-5_5"
-    },
-    {
-      "id": "sac-2008-the-cryptanalysis-of-reduced-round-sms4",
-      "venue": "SAC",
-      "year": 2008,
-      "title": "The Cryptanalysis of Reduced-Round SMS4",
-      "url": "https://link.springer.com/chapter/10.1007/978-3-642-04159-4_4"
-    },
-    {
-      "id": "fse-2014-differential-cryptanalysis-of-round-reduced-simon-and-speck",
-      "venue": "FSE",
-      "year": 2014,
-      "title": "Differential Cryptanalysis of Round-Reduced Simon and Speck",
-      "url": "https://link.springer.com/chapter/10.1007/978-3-662-46706-0_27"
-    },
-    {
-      "id": "ches-2011-spongent-a-lightweight-hash-function",
-      "venue": "CHES",
-      "year": 2011,
-      "title": "Spongent: A Lightweight Hash Function",
-      "url": "https://link.springer.com/chapter/10.1007/978-3-642-23951-9_20"
-    },
-    {
-      "id": "fse-2001-the-saturation-attack-a-bait-for-twofish",
-      "venue": "FSE",
-      "year": 2001,
-      "title": "The Saturation Attack - A Bait for Twofish",
-      "url": "https://link.springer.com/chapter/10.1007/3-540-45473-X_1"
-    },
-    {
-      "id": "iacr-tosc-2018-xoodyak-a-lightweight-cryptographic-scheme",
-      "venue": "IACR ToSC",
-      "year": 2018,
-      "title": "Xoodyak, a Lightweight Cryptographic Scheme",
-      "url": "https://tosc.iacr.org/index.php/ToSC/article/view/7347"
+      "year": 1990,
+      "title": "Differential Cryptanalysis of DES-like Cryptosystems",
+      "url": "https://link.springer.com/chapter/10.1007/3-540-38424-3_1"
     },
     {
       "id": "crypto-1994-first-experimental-cryptanalysis-des",
@@ -363,11 +97,291 @@ window.attackData = {
       "url": "https://link.springer.com/chapter/10.1007/3-540-48658-5_1"
     },
     {
+      "id": "crypto-2005-finding-collisions-in-the-full-sha-1",
+      "venue": "CRYPTO",
+      "year": 2005,
+      "title": "Finding Collisions in the Full SHA-1",
+      "url": "https://link.springer.com/chapter/10.1007/11535218_2"
+    },
+    {
       "id": "crypto-2009-short-chosen-prefix-collisions-md5-rogue-ca",
       "venue": "CRYPTO",
       "year": 2009,
       "title": "Short Chosen-Prefix Collisions for MD5 and the Creation of a Rogue CA Certificate",
       "url": "https://link.springer.com/chapter/10.1007/978-3-642-03356-8_4"
+    },
+    {
+      "id": "crypto-2010-a-practical-time-related-key-attack-on-the-kasumi-cryptosystem-used-in-gsm-and-3g-telephony",
+      "venue": "CRYPTO",
+      "year": 2010,
+      "title": "A Practical-Time Related-Key Attack on the KASUMI Cryptosystem Used in GSM and 3G Telephony",
+      "url": "https://doi.org/10.1007/978-3-642-14623-7_21"
+    },
+    {
+      "id": "crypto-2011-photon-a-lightweight-hash-function-family",
+      "venue": "CRYPTO",
+      "year": 2011,
+      "title": "PHOTON: A Lightweight Hash Function Family",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-642-22792-9_13"
+    },
+    {
+      "id": "crypto-2016-a-2-70-attack-on-the-full-misty1",
+      "venue": "CRYPTO",
+      "year": 2016,
+      "title": "A 2^70 Attack on the Full MISTY1",
+      "url": "https://doi.org/10.1007/978-3-662-53018-4_16"
+    },
+    {
+      "id": "crypto-2016-the-skinny-family-of-block-ciphers-and-its-low-latency-variant-mantis",
+      "venue": "CRYPTO",
+      "year": 2016,
+      "title": "The SKINNY Family of Block Ciphers and Its Low-Latency Variant MANTIS",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-662-53008-5_5"
+    },
+    {
+      "id": "crypto-2017-the-first-collision-for-full-sha-1",
+      "venue": "CRYPTO",
+      "year": 2017,
+      "title": "The First Collision for Full SHA-1",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-319-63688-7_19"
+    },
+    {
+      "id": "ctrsa-2024-improved-mitm-9rounds-aes-192",
+      "venue": "CT-RSA",
+      "year": 2024,
+      "title": "Improved Meet-in-the-Middle Attacks on Nine Rounds of the AES-192 Block Cipher",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-031-58868-6_6"
+    },
+    {
+      "id": "dcc-2016-meet-in-the-middle-attacks-on-10-round-aes-256",
+      "venue": "DCC",
+      "year": 2016,
+      "title": "Meet-in-the-middle attacks on 10-round AES-256",
+      "url": "https://link.springer.com/article/10.1007/s10623-015-0113-3"
+    },
+    {
+      "id": "dcc-2026-improved-mitm-attack-10-rounds-aes-256",
+      "venue": "DCC",
+      "year": 2023,
+      "title": "Improved meet-in-the-middle attack on 10 rounds of the AES-256 block cipher",
+      "url": "https://link.springer.com/article/10.1007/s10623-023-01323-4"
+    },
+    {
+      "id": "eurocrypt-1993-linear-cryptanalysis-method-for-des-cipher",
+      "venue": "EUROCRYPT",
+      "year": 1993,
+      "title": "Linear Cryptanalysis Method for DES Cipher",
+      "url": "https://link.springer.com/chapter/10.1007/3-540-48285-7_33"
+    },
+    {
+      "id": "eurocrypt-2005-collisions-for-hash-functions-md4-md5-haval-128-and-ripemd",
+      "venue": "EUROCRYPT",
+      "year": 2005,
+      "title": "Collisions for Hash Functions MD4, MD5, HAVAL-128 and RIPEMD",
+      "url": "https://link.springer.com/chapter/10.1007/11426639_36"
+    },
+    {
+      "id": "eurocrypt-2005-how-to-break-md5-and-other-hash-functions",
+      "venue": "EUROCRYPT",
+      "year": 2005,
+      "title": "How to Break MD5 and Other Hash Functions",
+      "url": "https://link.springer.com/chapter/10.1007/11426639_2"
+    },
+    {
+      "id": "eurocrypt-2007-chosen-prefix-collisions-for-md5-and-colliding-x-509-certificates",
+      "venue": "EUROCRYPT",
+      "year": 2007,
+      "title": "Chosen-Prefix Collisions for MD5 and Colliding X.509 Certificates",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-540-72540-4_1"
+    },
+    {
+      "id": "eurocrypt-2013-improved-key-recovery-attacks-on-reduced-round-aes-in-the-single-key-setting",
+      "venue": "EUROCRYPT",
+      "year": 2013,
+      "title": "Improved Key Recovery Attacks on Reduced-Round AES in the Single-Key Setting",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-642-38348-9_23"
+    },
+    {
+      "id": "eurocrypt-2016-freestart-collision-for-full-sha-1",
+      "venue": "EUROCRYPT",
+      "year": 2016,
+      "title": "Freestart Collision for Full SHA-1",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-662-49890-3_18"
+    },
+    {
+      "id": "eurocrypt-2016-improved-differential-linear-cryptanalysis-of-7-round-chaskey-with-partitioning",
+      "venue": "EUROCRYPT",
+      "year": 2016,
+      "title": "Improved Differential-Linear Cryptanalysis of 7-Round Chaskey with Partitioning",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-662-49890-3_14"
+    },
+    {
+      "id": "eurocrypt-2023-truncated-boomerang-aes",
+      "venue": "EUROCRYPT",
+      "year": 2023,
+      "title": "Truncated boomerang attacks and application to AES-based ciphers",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-031-30634-1_1"
+    },
+    {
+      "id": "fse-2000-correlations-in-rc6-with-a-reduced-number-of-rounds",
+      "venue": "FSE",
+      "year": 2000,
+      "title": "Correlations in RC6 with a Reduced Number of Rounds",
+      "url": "https://link.springer.com/chapter/10.1007/3-540-44706-7_7"
+    },
+    {
+      "id": "fse-2001-the-saturation-attack-a-bait-for-twofish",
+      "venue": "FSE",
+      "year": 2001,
+      "title": "The Saturation Attack - A Bait for Twofish",
+      "url": "https://link.springer.com/chapter/10.1007/3-540-45473-X_1"
+    },
+    {
+      "id": "fse-2003-differential-linear-cryptanalysis-of-serpent",
+      "venue": "FSE",
+      "year": 2003,
+      "title": "Differential-Linear Cryptanalysis of Serpent",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-540-39887-5_2"
+    },
+    {
+      "id": "fse-2008-collision-attacks-on-31-step-sha-256",
+      "venue": "FSE",
+      "year": 2008,
+      "title": "Collision Attacks on 31-Step SHA-256",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-540-71039-4_17"
+    },
+    {
+      "id": "fse-2009-single-key-cryptanalysis-of-the-full-present",
+      "venue": "FSE",
+      "year": 2009,
+      "title": "Single-Key Cryptanalysis of the Full PRESENT",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-642-03317-9_15"
+    },
+    {
+      "id": "fse-2009-the-rebound-attack-cryptanalysis-of-reduced-whirlpool-and-gr-stl",
+      "venue": "FSE",
+      "year": 2009,
+      "title": "The Rebound Attack: Cryptanalysis of Reduced Whirlpool and Grøstl",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-642-03317-9_17"
+    },
+    {
+      "id": "fse-2010-a-framework-for-the-analysis-of-sha-3-candidates",
+      "venue": "FSE",
+      "year": 2010,
+      "title": "A Framework for the Analysis of SHA-3 Candidates",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-642-13858-4_14"
+    },
+    {
+      "id": "fse-2010-analysis-of-the-sha-3-candidate-jh",
+      "venue": "FSE",
+      "year": 2010,
+      "title": "Analysis of the SHA-3 Candidate JH",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-642-13858-4_15"
+    },
+    {
+      "id": "fse-2012-bicliques-for-preimages-attacks-on-skein-512-and-the-sha-2-family",
+      "venue": "FSE",
+      "year": 2012,
+      "title": "Bicliques for Preimages: Attacks on Skein-512 and the SHA-2 Family",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-642-34047-5_15"
+    },
+    {
+      "id": "fse-2012-new-observations-on-impossible-differential-cryptanalysis-of-reduced-round-camellia",
+      "venue": "FSE",
+      "year": 2012,
+      "title": "New Observations on Impossible Differential Cryptanalysis of Reduced-Round Camellia",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-642-34047-5_6"
+    },
+    {
+      "id": "fse-2014-differential-cryptanalysis-of-round-reduced-simon-and-speck",
+      "venue": "FSE",
+      "year": 2014,
+      "title": "Differential Cryptanalysis of Round-Reduced Simon and Speck",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-662-46706-0_27"
+    },
+    {
+      "id": "fse-2016-practical-cryptanalysis-of-round-reduced-ascon",
+      "venue": "FSE",
+      "year": 2016,
+      "title": "Practical Cryptanalysis of Round-Reduced Ascon",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-662-52993-5_18"
+    },
+    {
+      "id": "iacr-tosc-2018-xoodyak-a-lightweight-cryptographic-scheme",
+      "venue": "IACR ToSC",
+      "year": 2018,
+      "title": "Xoodyak, a Lightweight Cryptographic Scheme",
+      "url": "https://tosc.iacr.org/index.php/ToSC/article/view/7347"
+    },
+    {
+      "id": "icisc-2014-bicliques-minimal-data-time-aes",
+      "venue": "ICISC",
+      "year": 2014,
+      "title": "Bicliques with Minimal Data and Time Complexity for AES",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-319-15943-0_10"
+    },
+    {
+      "id": "indocrypt-2008-new-impossible-differential-aes",
+      "venue": "INDOCRYPT",
+      "year": 2008,
+      "title": "New Impossible Differential Attacks on AES",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-540-89754-5_22"
+    },
+    {
+      "id": "indocrypt-2009-improved-mitm-aes",
+      "venue": "INDOCRYPT",
+      "year": 2009,
+      "title": "Improved Meet-in-the-Middle Attacks on AES",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-642-10628-6_10"
+    },
+    {
+      "id": "indocrypt-2010-impossible-differential-aes-128",
+      "venue": "INDOCRYPT",
+      "year": 2010,
+      "title": "Improved Impossible Differential Cryptanalysis of 7-Round AES-128",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-642-17401-8_20"
+    },
+    {
+      "id": "indocrypt-2015-improved-linear-cryptanalysis-of-reduced-round-simon-32-and-simon-48",
+      "venue": "INDOCRYPT",
+      "year": 2015,
+      "title": "Improved Linear Cryptanalysis of Reduced-Round SIMON-32 and SIMON-48",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-319-26617-6_9"
+    },
+    {
+      "id": "jcst-2007-impossible-differential-cryptanalysis-of-reduced-round-aria-and-camellia",
+      "venue": "JCST",
+      "year": 2007,
+      "title": "Impossible Differential Cryptanalysis of Reduced-Round ARIA and Camellia",
+      "url": "https://jcst.ict.ac.cn/en/article/id/1363"
+    },
+    {
+      "id": "jcst-2011-impossible-differential-attacks-on-13-round-clefia-128",
+      "venue": "JCST",
+      "year": 2011,
+      "title": "Impossible Differential Attacks on 13-Round CLEFIA-128",
+      "url": "https://jcst.ict.ac.cn/EN/10.1007/s11390-011-1173-0"
+    },
+    {
+      "id": "keccak-team-2025-crunchy-crypto-collision-and-pre-image-contest",
+      "venue": "Keccak Team",
+      "year": 2025,
+      "title": "Crunchy Crypto Collision and Pre-image Contest",
+      "url": "https://keccak.team/crunchy_contest.html"
+    },
+    {
+      "id": "sac-2008-the-cryptanalysis-of-reduced-round-sms4",
+      "venue": "SAC",
+      "year": 2008,
+      "title": "The Cryptanalysis of Reduced-Round SMS4",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-642-04159-4_4"
+    },
+    {
+      "id": "sac-2015-meet-in-the-middle-attacks-on-reduced-round-kuznyechik",
+      "venue": "SAC",
+      "year": 2015,
+      "title": "Meet-in-the-Middle Attacks on Reduced-Round Kuznyechik",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-319-31301-6_21"
     }
   ],
   "attacks": [
@@ -386,35 +400,6 @@ window.attackData = {
       "year": 2014,
       "paper": "Bicliques with Minimal Data and Time Complexity for AES",
       "url": "https://link.springer.com/chapter/10.1007/978-3-319-15943-0_10",
-      "tags": [
-        "AES candidate",
-        "AES selected standard",
-        "Low-data",
-        "National Standard",
-        "SPN"
-      ],
-      "structure": "SPN",
-      "algorithmYear": 1998,
-      "standard": "NIST / United States",
-      "designPaper": "AES Proposal: Rijndael",
-      "designVenue": "AES Candidate Submission 1998",
-      "designUrl": "https://csrc.nist.gov/CSRC/media/Projects/Cryptographic-Standards-and-Guidelines/documents/aes-development/Rijndael-ammended.pdf"
-    },
-    {
-      "id": "aes-128-boomerang",
-      "algorithm": "AES-128",
-      "type": "block",
-      "totalRounds": "10",
-      "attackedRounds": "6",
-      "attack": "Boomerang",
-      "model": "Single-Key",
-      "data": "2^59",
-      "time": "2^61",
-      "memory": "",
-      "venue": "EUROCRYPT",
-      "year": 2023,
-      "paper": "Truncated boomerang attacks and application to AES-based ciphers",
-      "url": "https://link.springer.com/chapter/10.1007/978-3-031-30634-1_1",
       "tags": [
         "AES candidate",
         "AES selected standard",
@@ -459,6 +444,35 @@ window.attackData = {
       "designUrl": "https://csrc.nist.gov/CSRC/media/Projects/Cryptographic-Standards-and-Guidelines/documents/aes-development/Rijndael-ammended.pdf"
     },
     {
+      "id": "aes-128-2013-dsmitm",
+      "algorithm": "AES-128",
+      "type": "block",
+      "totalRounds": "10",
+      "attackedRounds": "7",
+      "attack": "Meet-in-the-Middle",
+      "model": "Single-Key",
+      "data": "2^97",
+      "time": "2^99",
+      "memory": "2^98",
+      "venue": "EUROCRYPT",
+      "year": 2013,
+      "paper": "Improved Key Recovery Attacks on Reduced-Round AES in the Single-Key Setting",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-642-38348-9_23",
+      "tags": [
+        "AES candidate",
+        "AES selected standard",
+        "Low-data",
+        "National Standard",
+        "SPN"
+      ],
+      "structure": "SPN",
+      "algorithmYear": 1998,
+      "standard": "NIST / United States",
+      "designPaper": "AES Proposal: Rijndael",
+      "designVenue": "AES Candidate Submission 1998",
+      "designUrl": "https://csrc.nist.gov/CSRC/media/Projects/Cryptographic-Standards-and-Guidelines/documents/aes-development/Rijndael-ammended.pdf"
+    },
+    {
       "id": "aes-128-mitm",
       "algorithm": "AES-128",
       "type": "block",
@@ -473,6 +487,35 @@ window.attackData = {
       "year": 2009,
       "paper": "Improved Meet-in-the-Middle Attacks on AES",
       "url": "https://link.springer.com/chapter/10.1007/978-3-642-10628-6_10",
+      "tags": [
+        "AES candidate",
+        "AES selected standard",
+        "Low-data",
+        "National Standard",
+        "SPN"
+      ],
+      "structure": "SPN",
+      "algorithmYear": 1998,
+      "standard": "NIST / United States",
+      "designPaper": "AES Proposal: Rijndael",
+      "designVenue": "AES Candidate Submission 1998",
+      "designUrl": "https://csrc.nist.gov/CSRC/media/Projects/Cryptographic-Standards-and-Guidelines/documents/aes-development/Rijndael-ammended.pdf"
+    },
+    {
+      "id": "aes-128-boomerang",
+      "algorithm": "AES-128",
+      "type": "block",
+      "totalRounds": "10",
+      "attackedRounds": "6",
+      "attack": "Boomerang",
+      "model": "Single-Key",
+      "data": "2^59",
+      "time": "2^61",
+      "memory": "",
+      "venue": "EUROCRYPT",
+      "year": 2023,
+      "paper": "Truncated boomerang attacks and application to AES-based ciphers",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-031-30634-1_1",
       "tags": [
         "AES candidate",
         "AES selected standard",
@@ -542,33 +585,6 @@ window.attackData = {
       "designUrl": "https://csrc.nist.gov/CSRC/media/Projects/Cryptographic-Standards-and-Guidelines/documents/aes-development/Rijndael-ammended.pdf"
     },
     {
-      "id": "aes-192-id",
-      "algorithm": "AES-192",
-      "type": "block",
-      "totalRounds": "12",
-      "attackedRounds": "7",
-      "attack": "Impossible-Differential",
-      "model": "Single-Key",
-      "data": "2^91.2",
-      "time": "2^139.2",
-      "memory": "",
-      "venue": "INDOCRYPT",
-      "year": 2008,
-      "paper": "New Impossible Differential Attacks on AES",
-      "url": "https://link.springer.com/chapter/10.1007/978-3-540-89754-5_22",
-      "tags": [
-        "AES selected standard",
-        "National Standard",
-        "SPN"
-      ],
-      "structure": "SPN",
-      "algorithmYear": 1998,
-      "standard": "NIST / United States",
-      "designPaper": "AES Proposal: Rijndael",
-      "designVenue": "AES Candidate Submission 1998",
-      "designUrl": "https://csrc.nist.gov/CSRC/media/Projects/Cryptographic-Standards-and-Guidelines/documents/aes-development/Rijndael-ammended.pdf"
-    },
-    {
       "id": "aes-192-mitm",
       "algorithm": "AES-192",
       "type": "block",
@@ -583,6 +599,33 @@ window.attackData = {
       "year": 2024,
       "paper": "Improved Meet-in-the-Middle Attacks on Nine Rounds of the AES-192 Block Cipher",
       "url": "https://link.springer.com/chapter/10.1007/978-3-031-58868-6_6",
+      "tags": [
+        "AES selected standard",
+        "National Standard",
+        "SPN"
+      ],
+      "structure": "SPN",
+      "algorithmYear": 1998,
+      "standard": "NIST / United States",
+      "designPaper": "AES Proposal: Rijndael",
+      "designVenue": "AES Candidate Submission 1998",
+      "designUrl": "https://csrc.nist.gov/CSRC/media/Projects/Cryptographic-Standards-and-Guidelines/documents/aes-development/Rijndael-ammended.pdf"
+    },
+    {
+      "id": "aes-192-id",
+      "algorithm": "AES-192",
+      "type": "block",
+      "totalRounds": "12",
+      "attackedRounds": "7",
+      "attack": "Impossible-Differential",
+      "model": "Single-Key",
+      "data": "2^91.2",
+      "time": "2^139.2",
+      "memory": "",
+      "venue": "INDOCRYPT",
+      "year": 2008,
+      "paper": "New Impossible Differential Attacks on AES",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-540-89754-5_22",
       "tags": [
         "AES selected standard",
         "National Standard",
@@ -611,18 +654,16 @@ window.attackData = {
       "paper": "Bicliques with Minimal Data and Time Complexity for AES",
       "url": "https://link.springer.com/chapter/10.1007/978-3-319-15943-0_10",
       "tags": [
-        "AES candidate",
         "AES selected standard",
-        "National Standard",
-        "Related-key",
+        "Block cipher",
         "SPN"
       ],
       "structure": "SPN",
       "algorithmYear": 1998,
-      "standard": "NIST / United States",
+      "standard": "NIST standard (FIPS-197)",
       "designPaper": "AES Proposal: Rijndael",
-      "designVenue": "AES Candidate Submission 1998",
-      "designUrl": "https://csrc.nist.gov/CSRC/media/Projects/Cryptographic-Standards-and-Guidelines/documents/aes-development/Rijndael-ammended.pdf"
+      "designVenue": "First AES Candidate Conference (1998)",
+      "designUrl": "https://csrc.nist.gov/publications/detail/fips/197/final"
     },
     {
       "id": "aes-256-boomerang-rk",
@@ -632,7 +673,7 @@ window.attackData = {
       "attackedRounds": "14",
       "attack": "Boomerang",
       "model": "Related-Key",
-      "data": "2^99.5 ",
+      "data": "2^99.5",
       "time": "2^99.5",
       "memory": "2^77",
       "venue": "ASIACRYPT",
@@ -640,18 +681,16 @@ window.attackData = {
       "paper": "Related-Key Cryptanalysis of the Full AES-192 and AES-256",
       "url": "https://link.springer.com/chapter/10.1007/978-3-642-10366-7_1",
       "tags": [
-        "AES candidate",
         "AES selected standard",
-        "National Standard",
-        "Related-key",
+        "Block cipher",
         "SPN"
       ],
       "structure": "SPN",
       "algorithmYear": 1998,
-      "standard": "NIST / United States",
+      "standard": "NIST standard (FIPS-197)",
       "designPaper": "AES Proposal: Rijndael",
-      "designVenue": "AES Candidate Submission 1998",
-      "designUrl": "https://csrc.nist.gov/CSRC/media/Projects/Cryptographic-Standards-and-Guidelines/documents/aes-development/Rijndael-ammended.pdf"
+      "designVenue": "First AES Candidate Conference (1998)",
+      "designUrl": "https://csrc.nist.gov/publications/detail/fips/197/final"
     },
     {
       "id": "aes-256-differential-rk",
@@ -669,47 +708,16 @@ window.attackData = {
       "paper": "Improved Related-Key Differential Attacks against AES-256",
       "url": "https://cic.iacr.org/p/2/4/39",
       "tags": [
-        "AES candidate",
         "AES selected standard",
-        "National Standard",
-        "Related-key",
+        "Block cipher",
         "SPN"
       ],
       "structure": "SPN",
       "algorithmYear": 1998,
-      "standard": "NIST / United States",
+      "standard": "NIST standard (FIPS-197)",
       "designPaper": "AES Proposal: Rijndael",
-      "designVenue": "AES Candidate Submission 1998",
-      "designUrl": "https://csrc.nist.gov/CSRC/media/Projects/Cryptographic-Standards-and-Guidelines/documents/aes-development/Rijndael-ammended.pdf"
-    },
-    {
-      "id": "aes-256-id",
-      "algorithm": "AES-256",
-      "type": "block",
-      "totalRounds": "14",
-      "attackedRounds": "8",
-      "attack": "Impossible-Differential",
-      "model": "Single-Key",
-      "data": "2^89.1",
-      "time": "2^229.7 MA",
-      "memory": "",
-      "venue": "INDOCRYPT",
-      "year": 2008,
-      "paper": "New Impossible Differential Attacks on AES",
-      "url": "https://link.springer.com/chapter/10.1007/978-3-540-89754-5_22",
-      "tags": [
-        "AES candidate",
-        "AES selected standard",
-        "National Standard",
-        "Related-key",
-        "SPN"
-      ],
-      "structure": "SPN",
-      "algorithmYear": 1998,
-      "standard": "NIST / United States",
-      "designPaper": "AES Proposal: Rijndael",
-      "designVenue": "AES Candidate Submission 1998",
-      "designUrl": "https://csrc.nist.gov/CSRC/media/Projects/Cryptographic-Standards-and-Guidelines/documents/aes-development/Rijndael-ammended.pdf"
+      "designVenue": "First AES Candidate Conference (1998)",
+      "designUrl": "https://csrc.nist.gov/publications/detail/fips/197/final"
     },
     {
       "id": "aes-256-mitm",
@@ -727,18 +735,70 @@ window.attackData = {
       "paper": "Improved meet-in-the-middle attack on 10 rounds of the AES-256 block cipher",
       "url": "https://link.springer.com/article/10.1007/s10623-023-01323-4",
       "tags": [
-        "AES candidate",
         "AES selected standard",
-        "National Standard",
-        "Related-key",
+        "Block cipher",
         "SPN"
       ],
       "structure": "SPN",
       "algorithmYear": 1998,
-      "standard": "NIST / United States",
+      "standard": "NIST standard (FIPS-197)",
       "designPaper": "AES Proposal: Rijndael",
-      "designVenue": "AES Candidate Submission 1998",
-      "designUrl": "https://csrc.nist.gov/CSRC/media/Projects/Cryptographic-Standards-and-Guidelines/documents/aes-development/Rijndael-ammended.pdf"
+      "designVenue": "First AES Candidate Conference (1998)",
+      "designUrl": "https://csrc.nist.gov/publications/detail/fips/197/final"
+    },
+    {
+      "id": "aes-256-2016-dsmitm",
+      "algorithm": "AES-256",
+      "type": "block",
+      "totalRounds": "14",
+      "attackedRounds": "10",
+      "attack": "Meet-in-the-Middle",
+      "model": "Single-Key",
+      "data": "2^111",
+      "time": "2^253",
+      "memory": "2^215.2 bytes",
+      "venue": "DCC",
+      "year": 2016,
+      "paper": "Meet-in-the-middle attacks on 10-round AES-256",
+      "url": "https://link.springer.com/article/10.1007/s10623-015-0113-3",
+      "tags": [
+        "AES selected standard",
+        "Block cipher",
+        "SPN"
+      ],
+      "structure": "SPN",
+      "algorithmYear": 1998,
+      "standard": "NIST standard (FIPS-197)",
+      "designPaper": "AES Proposal: Rijndael",
+      "designVenue": "First AES Candidate Conference (1998)",
+      "designUrl": "https://csrc.nist.gov/publications/detail/fips/197/final"
+    },
+    {
+      "id": "aes-256-id",
+      "algorithm": "AES-256",
+      "type": "block",
+      "totalRounds": "14",
+      "attackedRounds": "8",
+      "attack": "Impossible-Differential",
+      "model": "Single-Key",
+      "data": "2^89.1",
+      "time": "2^229.7 MA",
+      "memory": "",
+      "venue": "INDOCRYPT",
+      "year": 2008,
+      "paper": "New Impossible Differential Attacks on AES",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-540-89754-5_22",
+      "tags": [
+        "AES selected standard",
+        "Block cipher",
+        "SPN"
+      ],
+      "structure": "SPN",
+      "algorithmYear": 1998,
+      "standard": "NIST standard (FIPS-197)",
+      "designPaper": "AES Proposal: Rijndael",
+      "designVenue": "First AES Candidate Conference (1998)",
+      "designUrl": "https://csrc.nist.gov/publications/detail/fips/197/final"
     },
     {
       "id": "aria-square",
@@ -968,6 +1028,34 @@ window.attackData = {
       "designUrl": "https://csrc.nist.gov/pubs/fips/46-3/final"
     },
     {
+      "id": "des-linear-experimental",
+      "algorithm": "DES",
+      "type": "block",
+      "totalRounds": "16",
+      "attackedRounds": "16",
+      "attack": "Linear cryptanalysis",
+      "model": "Single-Key",
+      "data": "2^43",
+      "time": "50 days / 12 computers",
+      "memory": "negligible",
+      "venue": "CRYPTO",
+      "year": 1994,
+      "paper": "The First Experimental Cryptanalysis of the Data Encryption Standard",
+      "url": "https://link.springer.com/chapter/10.1007/3-540-48658-5_1",
+      "tags": [
+        "Block cipher",
+        "Feistel",
+        "Legacy standard",
+        "National Standard"
+      ],
+      "structure": "Feistel",
+      "algorithmYear": 1977,
+      "standard": "NBS / United States",
+      "designPaper": "Data Encryption Standard",
+      "designVenue": "NIST FIPS 46-3",
+      "designUrl": "https://csrc.nist.gov/pubs/fips/46-3/final"
+    },
+    {
       "id": "gift-differential",
       "algorithm": "GIFT-64",
       "type": "block",
@@ -1112,20 +1200,20 @@ window.attackData = {
       "designUrl": "https://www.etsi.org/deliver/etsi_ts/135200_135299/135202/17.00.00_60/ts_135202v170000p.pdf"
     },
     {
-      "id": "keccak-crunchy-collision",
+      "id": "keccak-cube",
       "algorithm": "Keccak / SHA-3",
       "type": "hash",
       "totalRounds": "24 rounds",
-      "attackedRounds": "6",
-      "attack": "Collision challenge records",
+      "attackedRounds": "7",
+      "attack": "Cube / zero-sum distinguishers",
       "model": "Unkeyed",
-      "data": "",
-      "time": "",
+      "data": "2^n",
+      "time": "2^n",
       "memory": "",
-      "venue": "Keccak Team",
-      "year": 2025,
-      "paper": "Crunchy Crypto Collision and Pre-image Contest",
-      "url": "https://keccak.team/crunchy_contest.html",
+      "venue": "ASIACRYPT",
+      "year": 2009,
+      "paper": "Zero-Sum Distinguishers for Reduced Keccak-f and Hamsi-256",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-642-10366-7_17",
       "tags": [
         "Hash function",
         "National Standard",
@@ -1141,20 +1229,20 @@ window.attackData = {
       "designUrl": "https://keccak.team/files/Keccak-reference-3.0.pdf"
     },
     {
-      "id": "keccak-cube",
+      "id": "keccak-crunchy-collision",
       "algorithm": "Keccak / SHA-3",
       "type": "hash",
       "totalRounds": "24 rounds",
-      "attackedRounds": "7",
-      "attack": "Cube / zero-sum distinguishers",
+      "attackedRounds": "6",
+      "attack": "Collision challenge records",
       "model": "Unkeyed",
-      "data": "2^n",
-      "time": "2^n",
+      "data": "",
+      "time": "",
       "memory": "",
-      "venue": "ASIACRYPT",
-      "year": 2009,
-      "paper": "Zero-Sum Distinguishers for Reduced Keccak-f and Hamsi-256",
-      "url": "https://link.springer.com/chapter/10.1007/978-3-642-10366-7_17",
+      "venue": "Keccak Team",
+      "year": 2025,
+      "paper": "Crunchy Crypto Collision and Pre-image Contest",
+      "url": "https://keccak.team/crunchy_contest.html",
       "tags": [
         "Hash function",
         "National Standard",
@@ -1204,7 +1292,7 @@ window.attackData = {
       "type": "block",
       "totalRounds": "10",
       "attackedRounds": "5",
-      "attack": "Meet-in-the-middle",
+      "attack": "Meet-in-the-Middle",
       "model": "Single-Key",
       "data": "2^64",
       "time": "2^140",
@@ -1231,7 +1319,7 @@ window.attackData = {
       "type": "block",
       "totalRounds": "32",
       "attackedRounds": "16",
-      "attack": "Meet-in-the-middle / differential",
+      "attack": "Meet-in-the-Middle",
       "model": "Single-Key",
       "data": "2^64",
       "time": "2^64",
@@ -1308,6 +1396,34 @@ window.attackData = {
       "designUrl": "https://www.rfc-editor.org/rfc/rfc1321"
     },
     {
+      "id": "md5-short-chosen-prefix",
+      "algorithm": "MD5",
+      "type": "hash",
+      "totalRounds": "64 steps",
+      "attackedRounds": "64 steps",
+      "attack": "Chosen-prefix collision",
+      "model": "Unkeyed",
+      "data": "",
+      "time": "2^49",
+      "memory": "",
+      "venue": "CRYPTO",
+      "year": 2009,
+      "paper": "Short Chosen-Prefix Collisions for MD5 and the Creation of a Rogue CA Certificate",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-642-03356-8_4",
+      "tags": [
+        "Certificate attacks",
+        "Hash function",
+        "Legacy standard",
+        "Merkle-Damgard"
+      ],
+      "structure": "Merkle-Damgard",
+      "algorithmYear": 1991,
+      "standard": "Legacy Internet standard",
+      "designPaper": "The MD5 Message-Digest Algorithm",
+      "designVenue": "RFC 1321",
+      "designUrl": "https://www.rfc-editor.org/rfc/rfc1321"
+    },
+    {
       "id": "md5-collision",
       "algorithm": "MD5",
       "type": "hash",
@@ -1322,6 +1438,34 @@ window.attackData = {
       "year": 2005,
       "paper": "How to Break MD5 and Other Hash Functions",
       "url": "https://link.springer.com/chapter/10.1007/11426639_2",
+      "tags": [
+        "Certificate attacks",
+        "Hash function",
+        "Legacy standard",
+        "Merkle-Damgard"
+      ],
+      "structure": "Merkle-Damgard",
+      "algorithmYear": 1991,
+      "standard": "Legacy Internet standard",
+      "designPaper": "The MD5 Message-Digest Algorithm",
+      "designVenue": "RFC 1321",
+      "designUrl": "https://www.rfc-editor.org/rfc/rfc1321"
+    },
+    {
+      "id": "md5-short-identical-prefix-collision",
+      "algorithm": "MD5",
+      "type": "hash",
+      "totalRounds": "64 steps",
+      "attackedRounds": "64 steps",
+      "attack": "Collision attack",
+      "model": "Unkeyed",
+      "data": "",
+      "time": "2^16",
+      "memory": "",
+      "venue": "CRYPTO",
+      "year": 2009,
+      "paper": "Short Chosen-Prefix Collisions for MD5 and the Creation of a Rogue CA Certificate",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-642-03356-8_4",
       "tags": [
         "Certificate attacks",
         "Hash function",
@@ -1585,6 +1729,34 @@ window.attackData = {
       "designUrl": "https://csrc.nist.gov/pubs/fips/180-1/final"
     },
     {
+      "id": "sha1-wang",
+      "algorithm": "SHA-1",
+      "type": "hash",
+      "totalRounds": "80 steps",
+      "attackedRounds": "80 steps",
+      "attack": "Differential collision attack",
+      "model": "Unkeyed",
+      "data": "",
+      "time": "2^69",
+      "memory": "",
+      "venue": "CRYPTO",
+      "year": 2005,
+      "paper": "Finding Collisions in the Full SHA-1",
+      "url": "https://link.springer.com/chapter/10.1007/11535218_2",
+      "tags": [
+        "Hash function",
+        "Legacy standard",
+        "Merkle-Damgard",
+        "National Standard"
+      ],
+      "structure": "Merkle-Damgard",
+      "algorithmYear": 1995,
+      "standard": "NIST / United States",
+      "designPaper": "Secure Hash Standard",
+      "designVenue": "NIST FIPS 180-1",
+      "designUrl": "https://csrc.nist.gov/pubs/fips/180-1/final"
+    },
+    {
       "id": "sha1-shappening",
       "algorithm": "SHA-1",
       "type": "hash",
@@ -1613,32 +1785,31 @@ window.attackData = {
       "designUrl": "https://csrc.nist.gov/pubs/fips/180-1/final"
     },
     {
-      "id": "sha1-wang",
-      "algorithm": "SHA-1",
+      "id": "sha256-preimage",
+      "algorithm": "SHA-256",
       "type": "hash",
-      "totalRounds": "80 steps",
-      "attackedRounds": "80 steps",
-      "attack": "Differential collision attack",
+      "totalRounds": "64 steps",
+      "attackedRounds": "43 steps",
+      "attack": "Meet-in-the-Middle",
       "model": "Unkeyed",
       "data": "",
-      "time": "2^69",
-      "memory": "",
-      "venue": "CRYPTO",
-      "year": 2005,
-      "paper": "Finding Collisions in the Full SHA-1",
-      "url": "https://link.springer.com/chapter/10.1007/11535218_2",
+      "time": "2^254.9",
+      "memory": "2^6 words",
+      "venue": "ASIACRYPT",
+      "year": 2009,
+      "paper": "Preimages for Step-Reduced SHA-2",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-642-10366-7_34",
       "tags": [
         "Hash function",
-        "Legacy standard",
         "Merkle-Damgard",
         "National Standard"
       ],
       "structure": "Merkle-Damgard",
-      "algorithmYear": 1995,
+      "algorithmYear": 2001,
       "standard": "NIST / United States",
-      "designPaper": "Secure Hash Standard",
-      "designVenue": "NIST FIPS 180-1",
-      "designUrl": "https://csrc.nist.gov/pubs/fips/180-1/final"
+      "designPaper": "Secure Hash Standard (SHS)",
+      "designVenue": "NIST FIPS 180-4",
+      "designUrl": "https://csrc.nist.gov/pubs/fips/180-4/upd1/final"
     },
     {
       "id": "sha256-collision",
@@ -1668,39 +1839,12 @@ window.attackData = {
       "designUrl": "https://csrc.nist.gov/pubs/fips/180-4/upd1/final"
     },
     {
-      "id": "sha256-preimage",
-      "algorithm": "SHA-256",
-      "type": "hash",
-      "totalRounds": "64 steps",
-      "attackedRounds": "43 steps",
-      "attack": "Meet-in-the-middle preimage",
-      "model": "Unkeyed",
-      "data": "",
-      "time": "2^254.9",
-      "memory": "2^6 words",
-      "venue": "ASIACRYPT",
-      "year": 2009,
-      "paper": "Preimages for Step-Reduced SHA-2",
-      "url": "https://link.springer.com/chapter/10.1007/978-3-642-10366-7_34",
-      "tags": [
-        "Hash function",
-        "Merkle-Damgard",
-        "National Standard"
-      ],
-      "structure": "Merkle-Damgard",
-      "algorithmYear": 2001,
-      "standard": "NIST / United States",
-      "designPaper": "Secure Hash Standard (SHS)",
-      "designVenue": "NIST FIPS 180-4",
-      "designUrl": "https://csrc.nist.gov/pubs/fips/180-4/upd1/final"
-    },
-    {
       "id": "sha512-preimage",
       "algorithm": "SHA-512",
       "type": "hash",
       "totalRounds": "80 steps",
       "attackedRounds": "46 steps",
-      "attack": "Meet-in-the-middle preimage",
+      "attack": "Meet-in-the-Middle",
       "model": "Unkeyed",
       "data": "",
       "time": "2^511.5",
@@ -1783,7 +1927,7 @@ window.attackData = {
       "type": "block",
       "totalRounds": "40",
       "attackedRounds": "23",
-      "attack": "Meet-in-the-middle",
+      "attack": "Meet-in-the-Middle",
       "model": "Single-Key",
       "data": "2^64",
       "time": "2^126",
@@ -1971,90 +2115,6 @@ window.attackData = {
       "designPaper": "Xoodyak, a Lightweight Cryptographic Scheme",
       "designVenue": "IACR ToSC 2020",
       "designUrl": "https://tosc.iacr.org/index.php/ToSC/article/view/8618"
-    },
-    {
-      "id": "des-linear-experimental",
-      "algorithm": "DES",
-      "type": "block",
-      "totalRounds": "16",
-      "attackedRounds": "16",
-      "attack": "Linear cryptanalysis",
-      "model": "Single-Key",
-      "data": "2^43",
-      "time": "50 days / 12 computers",
-      "memory": "negligible",
-      "venue": "CRYPTO",
-      "year": 1994,
-      "paper": "The First Experimental Cryptanalysis of the Data Encryption Standard",
-      "url": "https://link.springer.com/chapter/10.1007/3-540-48658-5_1",
-      "tags": [
-        "Block cipher",
-        "Feistel",
-        "Legacy standard",
-        "National Standard"
-      ],
-      "structure": "Feistel",
-      "algorithmYear": 1977,
-      "standard": "NBS / United States",
-      "designPaper": "Data Encryption Standard",
-      "designVenue": "NIST FIPS 46-3",
-      "designUrl": "https://csrc.nist.gov/pubs/fips/46-3/final"
-    },
-    {
-      "id": "md5-short-chosen-prefix",
-      "algorithm": "MD5",
-      "type": "hash",
-      "totalRounds": "64 steps",
-      "attackedRounds": "64 steps",
-      "attack": "Chosen-prefix collision",
-      "model": "Unkeyed",
-      "data": "",
-      "time": "2^49",
-      "memory": "",
-      "venue": "CRYPTO",
-      "year": 2009,
-      "paper": "Short Chosen-Prefix Collisions for MD5 and the Creation of a Rogue CA Certificate",
-      "url": "https://link.springer.com/chapter/10.1007/978-3-642-03356-8_4",
-      "tags": [
-        "Certificate attacks",
-        "Hash function",
-        "Legacy standard",
-        "Merkle-Damgard"
-      ],
-      "structure": "Merkle-Damgard",
-      "algorithmYear": 1991,
-      "standard": "Legacy Internet standard",
-      "designPaper": "The MD5 Message-Digest Algorithm",
-      "designVenue": "RFC 1321",
-      "designUrl": "https://www.rfc-editor.org/rfc/rfc1321"
-    },
-    {
-      "id": "md5-short-identical-prefix-collision",
-      "algorithm": "MD5",
-      "type": "hash",
-      "totalRounds": "64 steps",
-      "attackedRounds": "64 steps",
-      "attack": "Collision attack",
-      "model": "Unkeyed",
-      "data": "",
-      "time": "2^16",
-      "memory": "",
-      "venue": "CRYPTO",
-      "year": 2009,
-      "paper": "Short Chosen-Prefix Collisions for MD5 and the Creation of a Rogue CA Certificate",
-      "url": "https://link.springer.com/chapter/10.1007/978-3-642-03356-8_4",
-      "tags": [
-        "Certificate attacks",
-        "Hash function",
-        "Legacy standard",
-        "Merkle-Damgard"
-      ],
-      "structure": "Merkle-Damgard",
-      "algorithmYear": 1991,
-      "standard": "Legacy Internet standard",
-      "designPaper": "The MD5 Message-Digest Algorithm",
-      "designVenue": "RFC 1321",
-      "designUrl": "https://www.rfc-editor.org/rfc/rfc1321"
     }
   ]
 };
