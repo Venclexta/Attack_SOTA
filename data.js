@@ -354,6 +354,20 @@ window.attackData = {
       "year": 2018,
       "title": "Xoodyak, a Lightweight Cryptographic Scheme",
       "url": "https://tosc.iacr.org/index.php/ToSC/article/view/7347"
+    },
+    {
+      "id": "crypto-1994-first-experimental-cryptanalysis-des",
+      "venue": "CRYPTO",
+      "year": 1994,
+      "title": "The First Experimental Cryptanalysis of the Data Encryption Standard",
+      "url": "https://link.springer.com/chapter/10.1007/3-540-48658-5_1"
+    },
+    {
+      "id": "crypto-2009-short-chosen-prefix-collisions-md5-rogue-ca",
+      "venue": "CRYPTO",
+      "year": 2009,
+      "title": "Short Chosen-Prefix Collisions for MD5 and the Creation of a Rogue CA Certificate",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-642-03356-8_4"
     }
   ],
   "attacks": [
@@ -1957,6 +1971,90 @@ window.attackData = {
       "designPaper": "Xoodyak, a Lightweight Cryptographic Scheme",
       "designVenue": "IACR ToSC 2020",
       "designUrl": "https://tosc.iacr.org/index.php/ToSC/article/view/8618"
+    },
+    {
+      "id": "des-linear-experimental",
+      "algorithm": "DES",
+      "type": "block",
+      "totalRounds": "16",
+      "attackedRounds": "16",
+      "attack": "Linear cryptanalysis",
+      "model": "Single-Key",
+      "data": "2^43",
+      "time": "50 days / 12 computers",
+      "memory": "negligible",
+      "venue": "CRYPTO",
+      "year": 1994,
+      "paper": "The First Experimental Cryptanalysis of the Data Encryption Standard",
+      "url": "https://link.springer.com/chapter/10.1007/3-540-48658-5_1",
+      "tags": [
+        "Block cipher",
+        "Feistel",
+        "Legacy standard",
+        "National Standard"
+      ],
+      "structure": "Feistel",
+      "algorithmYear": 1977,
+      "standard": "NBS / United States",
+      "designPaper": "Data Encryption Standard",
+      "designVenue": "NIST FIPS 46-3",
+      "designUrl": "https://csrc.nist.gov/pubs/fips/46-3/final"
+    },
+    {
+      "id": "md5-short-chosen-prefix",
+      "algorithm": "MD5",
+      "type": "hash",
+      "totalRounds": "64 steps",
+      "attackedRounds": "64 steps",
+      "attack": "Chosen-prefix collision",
+      "model": "Unkeyed",
+      "data": "",
+      "time": "2^49",
+      "memory": "",
+      "venue": "CRYPTO",
+      "year": 2009,
+      "paper": "Short Chosen-Prefix Collisions for MD5 and the Creation of a Rogue CA Certificate",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-642-03356-8_4",
+      "tags": [
+        "Certificate attacks",
+        "Hash function",
+        "Legacy standard",
+        "Merkle-Damgard"
+      ],
+      "structure": "Merkle-Damgard",
+      "algorithmYear": 1991,
+      "standard": "Legacy Internet standard",
+      "designPaper": "The MD5 Message-Digest Algorithm",
+      "designVenue": "RFC 1321",
+      "designUrl": "https://www.rfc-editor.org/rfc/rfc1321"
+    },
+    {
+      "id": "md5-short-identical-prefix-collision",
+      "algorithm": "MD5",
+      "type": "hash",
+      "totalRounds": "64 steps",
+      "attackedRounds": "64 steps",
+      "attack": "Collision attack",
+      "model": "Unkeyed",
+      "data": "",
+      "time": "2^16",
+      "memory": "",
+      "venue": "CRYPTO",
+      "year": 2009,
+      "paper": "Short Chosen-Prefix Collisions for MD5 and the Creation of a Rogue CA Certificate",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-642-03356-8_4",
+      "tags": [
+        "Certificate attacks",
+        "Hash function",
+        "Legacy standard",
+        "Merkle-Damgard"
+      ],
+      "structure": "Merkle-Damgard",
+      "algorithmYear": 1991,
+      "standard": "Legacy Internet standard",
+      "designPaper": "The MD5 Message-Digest Algorithm",
+      "designVenue": "RFC 1321",
+      "designUrl": "https://www.rfc-editor.org/rfc/rfc1321"
     }
   ]
 };
