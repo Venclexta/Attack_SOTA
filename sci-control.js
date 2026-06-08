@@ -306,6 +306,9 @@
     if (!query) return state.records;
     return state.records.filter((record) =>
       [
+        record.id,
+        record.algorithmKey,
+        record.sourceKey,
         record.algorithm,
         record.structure,
         record.attack,
@@ -327,7 +330,7 @@
     if (!records.length) {
       const row = document.createElement("tr");
       const empty = createCell("No records found.", "empty");
-      empty.colSpan = 6;
+      empty.colSpan = 7;
       row.append(empty);
       table.append(row);
       return;
@@ -338,6 +341,9 @@
 
       const algorithm = createCell(record.algorithm);
       appendSubtle(algorithm, `${record.structure || ""}${record.algorithmYear ? ` · ${record.algorithmYear}` : ""}`);
+
+      const recordId = createCell(record.id);
+      appendSubtle(recordId, record.sourceKey || "");
 
       const attack = createCell(record.attack);
       appendSubtle(attack, record.model);
@@ -371,7 +377,7 @@
       del.textContent = "Delete";
       actions.append(edit, del);
 
-      row.append(algorithm, attack, rounds, complexities, source, actions);
+      row.append(algorithm, recordId, attack, rounds, complexities, source, actions);
       table.append(row);
     }
   }
@@ -450,7 +456,10 @@
         body: JSON.stringify(record)
       });
       resetForm();
-      setMessage(message, `Saved "${saved.id || record.id}".`);
+      setMessage(
+        message,
+        `Saved "${saved.id || record.id}". Use a new record id to add another record under the same method.`
+      );
       await loadRecords();
     } catch (error) {
       setMessage(message, `Save failed: ${error.message}`, "error");
