@@ -174,10 +174,9 @@ function recordRow(item, methodMarkup) {
       <td>
         <a href="${safeUrl(item.url)}" target="_blank" rel="noreferrer">${escapeHtml(item.venue)} ${escapeHtml(item.year)}</a>
         <span class="subtle">${escapeHtml(item.paper)}</span>
-        <label class="record-select">
-          <input type="checkbox" data-select-record="${escapeHtml(item.id)}"${checked}>
-          <span>Select</span>
-        </label>
+      </td>
+      <td class="select-cell">
+        <input class="record-select" type="checkbox" data-select-record="${escapeHtml(item.id)}"${checked} aria-label="Select ${escapeHtml(item.attack)} record">
       </td>
     </tr>
   `;
@@ -324,7 +323,7 @@ function renderAlgorithmPage() {
     const origin = document.querySelector("#algorithm-origin");
     if (origin) origin.hidden = true;
     algorithmTable.innerHTML =
-      '<tr><td colspan="6" class="empty">No records are available for this algorithm.</td></tr>';
+      '<tr><td colspan="7" class="empty">No records are available for this algorithm.</td></tr>';
     updateExportControls();
     return;
   }

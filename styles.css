@@ -504,6 +504,30 @@ table {
   min-width: 1040px;
 }
 
+.detail-table th,
+.detail-table td {
+  padding: 9px 10px;
+}
+
+.detail-table td {
+  font-size: 13px;
+}
+
+.detail-table .subtle {
+  margin-top: 2px;
+  font-size: 11px;
+  line-height: 1.35;
+}
+
+.detail-table .rounds-cell {
+  min-width: 116px;
+  gap: 5px;
+}
+
+.detail-table .coverage-cell {
+  min-width: 108px;
+}
+
 .export-toolbar {
   display: flex;
   align-items: center;
@@ -529,19 +553,16 @@ table {
 }
 
 .record-select {
-  display: inline-flex;
-  align-items: center;
-  gap: 5px;
-  margin-top: 6px;
-  color: var(--muted);
-  font-size: 12px;
-  white-space: nowrap;
-}
-
-.record-select input {
   width: 14px;
   height: 14px;
   margin: 0;
+  vertical-align: middle;
+}
+
+.select-cell {
+  width: 58px;
+  text-align: center;
+  vertical-align: middle;
 }
 
 .admin-grid {
