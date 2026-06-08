@@ -60,19 +60,13 @@ function fieldMatches(field, query, tokens) {
 
 function textSearchFields(item) {
   return [
-    item.id,
-    item.algorithmKey,
-    item.sourceKey,
     item.algorithm,
     item.structure,
     item.attack,
     item.model,
     item.venue,
     item.year,
-    item.paper,
-    item.data,
-    item.time,
-    item.memory
+    item.paper
   ];
 }
 
@@ -164,25 +158,6 @@ function bestAttacksByAlgorithm(items) {
       best: [...records].sort(compareAttackStrength)[0]
     }))
     .sort((a, b) => collator.compare(a.algorithm, b.algorithm));
-}
-
-function recordSearchMode() {
-  const q = canonical(state.query);
-  if (!q) return false;
-  const tokens = queryTokens(state.query);
-  return !attacks.some((item) => fieldMatches(item.algorithm, q, tokens));
-}
-
-function sortSearchRecords(items) {
-  return [...items].sort((a, b) => {
-    const algorithmDiff = collator.compare(a.algorithm, b.algorithm);
-    if (algorithmDiff !== 0) return algorithmDiff;
-    const attackDiff = collator.compare(a.attack, b.attack);
-    if (attackDiff !== 0) return attackDiff;
-    const strengthDiff = compareAttackStrength(a, b);
-    if (strengthDiff !== 0) return strengthDiff;
-    return collator.compare(a.id || "", b.id || "");
-  });
 }
 
 function pill(text, className = "") {
@@ -299,46 +274,37 @@ function algorithmSubtitle(item) {
   return `${structure} · ${year}`;
 }
 
-function tableRow(item) {
-  const href = `algorithm.html?algorithm=${encodeURIComponent(item.algorithm)}`;
-  return `
-    <tr>
-      <td>
-        <a class="row-link" href="${escapeHtml(href)}">
-          ${escapeHtml(item.algorithm)}
-        </a>
-        <span class="subtle">${escapeHtml(algorithmSubtitle(item))}</span>
-      </td>
-      <td>
-        <strong>${escapeHtml(item.attack)}</strong>
-        <span class="subtle">${escapeHtml(item.model)}</span>
-      </td>
-      <td>${roundsCoverageMarkup(item)}</td>
-      <td>${formatComplexity(item.data)}</td>
-      <td>${formatComplexity(item.time)}</td>
-      <td>${formatComplexity(item.memory)}</td>
-      <td>
-        <a href="${safeUrl(item.url)}" target="_blank" rel="noreferrer">
-          ${escapeHtml(item.venue)} ${escapeHtml(item.year)}
-        </a>
-      </td>
-    </tr>
-  `;
-}
-
 function renderTable(items) {
-  if (recordSearchMode()) {
-    attackTable.innerHTML =
-      sortSearchRecords(items).map(tableRow).join("") ||
-      `<tr><td colspan="7" class="empty">No matching attack records.</td></tr>`;
-    return;
-  }
-
   const groups = bestAttacksByAlgorithm(items);
+
   attackTable.innerHTML =
     groups
       .map((group) => {
-        return tableRow(group.best);
+        const item = group.best;
+        const href = `algorithm.html?algorithm=${encodeURIComponent(item.algorithm)}`;
+        return `
+          <tr>
+            <td>
+              <a class="row-link" href="${escapeHtml(href)}">
+                ${escapeHtml(item.algorithm)}
+              </a>
+              <span class="subtle">${escapeHtml(algorithmSubtitle(item))}</span>
+            </td>
+            <td>
+              <strong>${escapeHtml(item.attack)}</strong>
+              <span class="subtle">${escapeHtml(item.model)}</span>
+            </td>
+            <td>${roundsCoverageMarkup(item)}</td>
+            <td>${formatComplexity(item.data)}</td>
+            <td>${formatComplexity(item.time)}</td>
+            <td>${formatComplexity(item.memory)}</td>
+            <td>
+              <a href="${safeUrl(item.url)}" target="_blank" rel="noreferrer">
+                ${escapeHtml(item.venue)} ${escapeHtml(item.year)}
+              </a>
+            </td>
+          </tr>
+        `;
       })
       .join("") || `<tr><td colspan="7" class="empty">No matching attack records.</td></tr>`;
 }
